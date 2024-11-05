@@ -1,0 +1,89 @@
+﻿@page
+@model ProjectGroup.Pages.TicketsPage.IndexModel
+
+@{
+    ViewData["Title"] = "Available Tickets";
+}
+
+<h1 class="text-center my-4 text-primary">Tickets for Sale</h1>
+
+<div class="container">
+    @if (Model.Tickets != null && Model.Tickets.Any())
+    {
+        <div class="row">
+            @foreach (var ticket in Model.Tickets)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-img-top position-relative">
+                            <img src="@(ticket.Images.FirstOrDefault()?.Url ?? "https://via.placeholder.com/300x200?text=No+Image+Available")" class="card-img" alt="@ticket.EventName">
+                            <div class="card-img-overlay d-flex flex-column justify-content-end text-white p-3" style="background: rgba(0,0,0,0.4);">
+                                <h5 class="card-title text-truncate">@ticket.EventName</h5>
+                                <p class="card-text">@ticket.EventType?.Name</p>
+                            </div>
+                        </div>
+
+                        <div class="card-body">
+                            <p><strong>Date:</strong> @ticket.EventDate?.ToString("MMMM dd, yyyy")</p>
+                            <p><strong>Price:</strong> $@ticket.Price?.ToString("F2")</p>
+                            <p class="text-muted"><small>Expires on: @ticket.ExpirationDate?.ToString("MMMM dd, yyyy")</small></p>
+                            <span class="badge @(ticket.TicketStatus == "Available" ? "bg-success text-light" : "bg-danger text-light")">
+                                @ticket.TicketStatus
+                            </span>
+                        </div>
+
+                        <div class="card-footer text-center bg-light">
+                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ticketModal-@ticket.Id">
+                                View Details
+                            </button>
+                            <button type="button" class="btn btn-success btn-sm">Buy Now</button>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="ticketModal-@ticket.Id" tabindex="-1" aria-labelledby="ticketModalLabel-@ticket.Id" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="ticketModalLabel-@ticket.Id">@ticket.EventName - Details</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                    <p><strong>Event:</strong> @ticket.EventType?.Name</p>
+                                    <p><strong>Date:</strong> @ticket.EventDate?.ToString("MMMM dd, yyyy")</p>
+                                    <p><strong>Price:</strong> $@ticket.Price?.ToString("F2")</p>
+                                    <p><strong>Location:</strong> @ticket.Owner?.Username</p>
+                                    <p><strong>Expires on:</strong> @ticket.ExpirationDate?.ToString("MMMM dd, yyyy")</p>
+                                    <p><strong>Status:</strong> @ticket.TicketStatus</p>
+                                    <div class="mt-3">
+                                        <p><strong>Seller Details:</strong></p>
+                                        <p><strong>Username:</strong> @ticket.Owner?.Username</p>
+                                        <p>
+                                            <strong>Contact:</strong>
+                                            @if (Model.UserId != ticket.Owner?.Id)
+                                            {
+                                                <a href="@Url.Page("/Customer/Message", new { buyerId = Model.UserId, sellerId = ticket.Owner?.Id, ticketId = ticket.Id})">Start Conversation</a>
+                                            }
+                                            else
+                                            {
+                                                <strong>No contact available</strong>
+                                            }
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    <button type="button" class="btn btn-primary">Proceed to Buy</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+    else
+    {
+        <p class="text-center">No tickets available.</p>
+    }
+</div>

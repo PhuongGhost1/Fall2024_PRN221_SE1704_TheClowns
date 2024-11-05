@@ -1,12 +1,104 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\message.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\message.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\authentication\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\authentication\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\authentication\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\authentication\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DC6C737E-E2E2-4EAD-8FB2-EC59794C3D11}|..\\TicketResell_DAO\\TicketResell_DAO.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_dao\\transactiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Login.cshtml.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Authentication\\Login.cshtml.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml.cs",
+              "RelativeToolTip": "Pages\\Authentication\\Login.cshtml.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAgwCwAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T04:03:05.473Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Authentication\\Login.cshtml",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml",
+              "RelativeToolTip": "Pages\\Authentication\\Login.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-05T04:03:00.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "TransactionDAO.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TransactionDAO.cs",
+              "RelativeDocumentMoniker": "..\\TicketResell_DAO\\TransactionDAO.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TransactionDAO.cs",
+              "RelativeToolTip": "..\\TicketResell_DAO\\TransactionDAO.cs",
+              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEwAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-05T03:45:20.663Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Message.cshtml",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml",
+              "RelativeDocumentMoniker": "Pages\\Customer\\Message.cshtml",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml",
+              "RelativeToolTip": "Pages\\Customer\\Message.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAwF8AAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-03T10:35:13.384Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Message.cshtml.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customer\\Message.cshtml.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customer\\Message.cshtml.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAArwE4AAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-04T15:38:25.869Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

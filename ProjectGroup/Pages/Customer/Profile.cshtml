@@ -1,0 +1,174 @@
+﻿@page
+@model ProjectGroup.Pages.Customer.ProfileModel
+@{
+    ViewData["Title"] = "User Profile";
+}
+
+<div class="container mt-5">
+    <h2 class="text-center">User Profile</h2>
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">@TempData["Message"]</div>
+    }
+
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success">@TempData["SuccessMessage"]</div>
+    }
+
+    @if (TempData["ErrorMessage"] != null)
+    {
+        <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+    }
+    <ul class="nav nav-tabs" id="profileTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="password-tab" data-toggle="tab" href="#changePassword" role="tab" aria-controls="changePassword" aria-selected="true">Change Password</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="socialMedia-tab" data-toggle="tab" href="#socialMedia" role="tab" aria-controls="socialMedia" aria-selected="false">Social Media Links</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="transactions-tab" data-toggle="tab" href="#transactions" role="tab" aria-controls="transactions" aria-selected="false">Transaction History</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="posts-tab" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="false">Posted Tickets</a>
+        </li>
+    </ul>
+
+    <div class="tab-content" id="profileTabContent">
+        <div class="tab-pane fade show active" id="changePassword" role="tabpanel" aria-labelledby="password-tab">
+            <form method="post" asp-page-handler="ChangePassword">
+                <div class="form-group mt-3 mb-3">
+                    <label asp-for="CurrentPassword" class="control-label"></label>
+                    <input asp-for="CurrentPassword" class="form-control" type="password" required />
+                    <span asp-validation-for="CurrentPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="NewPassword" class="control-label"></label>
+                    <input asp-for="NewPassword" class="form-control" type="password" required />
+                    <span asp-validation-for="NewPassword" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="ConfirmPassword" class="control-label"></label>
+                    <input asp-for="ConfirmPassword" class="form-control" type="password" required />
+                    <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Password</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="socialMedia" role="tabpanel" aria-labelledby="socialMedia-tab">
+            <form method="post" asp-page-handler="UpdateSocialMedia">
+                <div class="form-group mt-3 mb-3">
+                    <label asp-for="FacebookLink" class="control-label"></label>
+                    <input asp-for="FacebookLink" class="form-control" placeholder="Facebook Profile URL" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="TwitterLink" class="control-label"></label>
+                    <input asp-for="TwitterLink" class="form-control" placeholder="Twitter Profile URL" />
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="InstagramLink" class="control-label"></label>
+                    <input asp-for="InstagramLink" class="form-control" placeholder="Instagram Profile URL" />
+                </div>
+
+                <button type="submit" class="btn btn-primary">Update Links</button>
+            </form>
+        </div>
+
+        <div class="tab-pane fade" id="transactions" role="tabpanel" aria-labelledby="transactions-tab">
+            <h4 class="mt-3">Transaction History</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var transaction in Model.Transactions)
+                    {
+                        <tr>
+                            <td>@transaction.TransactionDate</td>
+                            <td>@transaction.Amount</td>
+                            <td>@transaction.TransactionStatus</td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+
+        <div class="tab-pane fade" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+            <h4 class="mt-3">Your Posted Tickets</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Date</th>
+                        <th>Price</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var ticket in Model.PostedTickets)
+                    {
+                        <tr>
+                            <td>@ticket.EventName</td>
+                            <td>@ticket.EventDate?.ToString("d")</td>
+                            <td>@ticket.Price</td>
+                            <td>
+                                <span class="badge @(ticket.TicketStatus == "Available" ? "bg-success" : ticket.TicketStatus == "Sold" ? "bg-danger" : ticket.TicketStatus == "Hide" ? "bg-light text-black" : "bg-warning")">
+                                    @ticket.TicketStatus
+                                </span>
+                            </td>
+                            <td>
+                                @if (ticket.TicketStatus == "Available")
+                                {
+                                    <a asp-page="/Customer/EditTicket" asp-route-id="@ticket.Id" class="btn btn-warning btn-sm">Edit</a>
+                                    <form method="post" asp-page-handler="HideTicket" asp-route-id="@ticket.Id" class="d-inline">
+                                        <button type="submit" class="btn btn-light btn-sm">Hide</button>
+                                    </form>
+                                }
+                                else if (ticket.TicketStatus == "Pending")
+                                {
+                                    <a asp-page-handler="EditTicket" asp-route-id="@ticket.Id" class="btn btn-warning btn-sm">Edit</a>
+                                }
+                                else if (ticket.TicketStatus == "Hide")
+                                {
+                                    <a asp-page="/Customer/EditTicket" asp-route-id="@ticket.Id" class="btn btn-warning btn-sm">Edit</a>
+                                    <form method="post" asp-page-handler="AvailableTicket" asp-route-id="@ticket.Id" class="d-inline">
+                                        <button type="submit" class="btn btn-success btn-sm">Available</button>
+                                    </form>
+                                }
+                                else
+                                {
+                                    <span class="text-muted">No Actions Available</span>
+                                }
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    $(document).ready(function () {
+        $('#profileTab a').on('click', function (e) {
+            e.preventDefault();
+            $(this).tab('show');
+        });
+    });
+</script>

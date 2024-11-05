@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using Azure
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -7,26 +9,81 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/ProjectGroup.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">ProjectGroup</a>
+                <a class="navbar-brand" asp-area="" asp-page="/">Ticket Resell Platform</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="navbar-collapse collapse d-sm-flex justify-content-between">
+                    <ul class="navbar-nav d-flex justify-content-center flex-grow-1">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-page="/TicketsPage/Index">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/Customer/UpPost">Up Post</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-page="/AboutUs">About Us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
                         </li>
                     </ul>
+
+                    <ul class="navbar-nav">
+                        @{
+                            String Username = HttpContextAccessor.HttpContext.Session.GetString("UserName");
+                            String RoleIdString = HttpContextAccessor.HttpContext.Session.GetString("RoleId");
+                            String UserIdString = HttpContextAccessor.HttpContext.Session.GetString("UserId");
+                            Guid? RoleId = string.IsNullOrEmpty(RoleIdString) ? (Guid?)null : Guid.Parse(RoleIdString);
+                            Guid? UserId = string.IsNullOrEmpty(UserIdString) ? (Guid?)null : Guid.Parse(UserIdString);
+
+                            if (!string.IsNullOrEmpty(Username) && RoleId != null)
+                            {
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        Hello, @Username!
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-page="/Customer/Profile">
+                                                <i class="fas fa-user me-2"></i> Profile
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" asp-area="" asp-page="/Customer/Message">
+                                                <i class="fas fa-envelope me-2"></i> Messages
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <form asp-area="" asp-page="/Authentication/Logout" method="post" class="d-inline">
+                                                <button type="submit" class="dropdown-item">
+                                                    <i class="fas fa-sign-out-alt me-2"></i> Log Out
+                                                </button>
+                                            </form>
+                                        </li>
+                                    </ul>
+                                </li>
+                            }
+                            else
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Authentication/Login">Login</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-area="" asp-page="/Authentication/Register">Sign up</a>
+                                </li>
+                            }
+                        }
+                    </ul>
                 </div>
+
             </div>
         </nav>
     </header>
@@ -44,8 +101,6 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
