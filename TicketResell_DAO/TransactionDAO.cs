@@ -37,9 +37,11 @@ namespace TicketResell_DAO
                 await _context.Transactions.AddAsync(transaction);
                 await _context.SaveChangesAsync();
             }
-            catch (Exception ex)
+            catch (DbUpdateException ex)
             {
                 flag = false;
+                var innerException = ex.InnerException?.Message;
+                Console.WriteLine("Error Details: " + innerException);
             }
             return flag;
         }
@@ -93,6 +95,33 @@ namespace TicketResell_DAO
             _context.Users.Update(user);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<Transactions?> GetTransactionBySomeIds(Guid? buyerId, Guid? sellerId, Guid? ticketId)
+        {
+            return await _context.Transactions
+                .Where(t => t.BuyerId == buyerId && t.SellerId == sellerId && t.TicketId == ticketId)
+                .FirstOrDefaultAsync();
+        }
+
+        public async Task<int> CheckBookingPunishment(Guid? userId, string status)
+        {
+            return await _context.Transactions.CountAsync(t => t.BuyerId == userId && t.TransactionStatus == status);
+        }
+
+        public async Task<int> CheckBookingPunishmentForPending(Guid? userId)
+        {
+            var pendingTransactions = await _context.Transactions
+                .Where(t => t.BuyerId == userId && t.TransactionStatus == "Pending")
+                .Include(t => t.Ticket)
+                .ToListAsync();
+
+            int delayedPendingCount = pendingTransactions
+                .Count(t => t.Ticket.ExpirationDate.HasValue
+                            && t.TransactionDate.HasValue
+                            && (t.Ticket.ExpirationDate.Value - t.TransactionDate.Value).TotalDays > 1.5f);
+
+            return delayedPendingCount;
         }
     }
 }

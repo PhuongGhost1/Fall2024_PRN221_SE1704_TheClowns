@@ -48,6 +48,9 @@ namespace TicketResell_DAO
         public async Task<Conversation?> GetActiveConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId)
         {
             return await _context.Conversations
+                .Include(c => c.Ticket)
+                .Include(c => c.Buyer)
+                .Include (c => c.Seller)
                 .FirstOrDefaultAsync(c => c.BuyerId == buyerId && c.SellerId == sellerId && c.EndedAt == null && c.TicketId == ticketId);
         }
 

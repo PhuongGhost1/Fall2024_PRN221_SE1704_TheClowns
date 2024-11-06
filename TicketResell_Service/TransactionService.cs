@@ -17,10 +17,13 @@ namespace TicketResell_Service
         Task<List<Transactions>> GetTransactionsByTicketIdAsync(Guid ticketId);
         Task<List<Transactions>> GetTransactionsByUserIdAsync(Guid? userId);
         Task<bool> SaveDepositeTransaction(Guid userId, long amount);
-        Task<string> CreateTransactionAsync(Guid conversationId, Guid buyerId, Guid sellerId, decimal amount);
+        Task<string> CreateTransactionAsync(Guid conversationId, Guid buyerId, Guid sellerId, Guid ticketId, decimal amount);
         Task<Transactions> GetByPayPalPaymentIdAsync(string paymentId);
         Task<bool> UpdateTransactionAsync(Transactions transactions);
         Task<bool> GetMoneyWalletFromBuyerAsync(Guid? userId, decimal price);
+        Task<Transactions?> GetTransactionBySomeIdsAsync(Guid? buyerId, Guid? sellerId, Guid? ticketId);
+        Task<int> CheckBookingPunishmentAsync(Guid? userId, string status);
+        Task<int> CheckBookingPunishmentForPendingAsync(Guid? userId);
     }
 
     public class TransactionService : ITransactionService
@@ -58,15 +61,18 @@ namespace TicketResell_Service
             return await _transactionRepository.AddAsync(transaction);
         }
 
-        public async Task<string> CreateTransactionAsync(Guid conversationId, Guid buyerId, Guid sellerId, decimal amount)
+        public async Task<string> CreateTransactionAsync(Guid conversationId, Guid buyerId, Guid sellerId, Guid ticketId, decimal amount)
         {
             var transaction = new Transactions
             {
                 Id = Guid.NewGuid(),
                 BuyerId = buyerId,
                 SellerId = sellerId,
+                TicketId = ticketId,
                 Amount = amount,
-                TransactionStatus = "Pending"
+                TransactionStatus = "Pending",
+                TransactionDate = DateTime.UtcNow < new DateTime(1753, 1, 1) ? new DateTime(1753, 1, 1) : DateTime.UtcNow,
+                TypeTransaction = "Paypal"              
             };
 
             var success = await _transactionRepository.AddAsync(transaction);
@@ -76,8 +82,7 @@ namespace TicketResell_Service
             }
 
             var approvalUrl = await CreatePayPalPayment(transaction);
-            transaction.PaypalPaymentId = approvalUrl;
-            await _transactionRepository.UpdateAsync(transaction); 
+            Console.WriteLine(approvalUrl);
 
             return approvalUrl;
         }
@@ -109,13 +114,13 @@ namespace TicketResell_Service
                             total = ((decimal)transaction.Amount).ToString("F2"),
                             currency = "USD"
                         },
-                        description = "Transaction description"
+                        description = "Please complete your transaction!!!"
                     }
                 },
                 redirect_urls = new RedirectUrls
                 {
-                    cancel_url = _configuration["PayPal:FailUrl"],
-                    return_url = _configuration["PayPal:SuccessUrl"]
+                    cancel_url = $"{_configuration["PayPal:FailUrl"]}?transactionId={transaction.Id}",
+                    return_url = $"{_configuration["PayPal:SuccessUrl"]}"
                 }
             };
 
@@ -137,5 +142,11 @@ namespace TicketResell_Service
         public async Task<bool> UpdateTransactionAsync(Transactions transactions) => await _transactionRepository.UpdateAsync(transactions);
 
         public async Task<bool> GetMoneyWalletFromBuyerAsync(Guid? userId, decimal price) => await _transactionRepository.GetMoneyWalletFromBuyer(userId, price);
+
+        public async Task<Transactions?> GetTransactionBySomeIdsAsync(Guid? buyerId, Guid? sellerId, Guid? ticketId) => await _transactionRepository.GetTransactionBySomeIds(buyerId, sellerId, ticketId);
+
+        public async Task<int> CheckBookingPunishmentAsync(Guid? userId, string status) => await _transactionRepository.CheckBookingPunishment(userId, status);
+
+        public async Task<int> CheckBookingPunishmentForPendingAsync(Guid? userId) => await _transactionRepository.CheckBookingPunishmentForPending(userId);
     }
 }

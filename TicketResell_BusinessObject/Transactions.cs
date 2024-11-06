@@ -19,7 +19,7 @@ public partial class Transactions
 
     public decimal PlatformFee { get; set; }
 
-    public DateTime TransactionDate { get; set; }
+    public DateTime? TransactionDate { get; set; }
 
     public string? TransactionStatus { get; set; }
 

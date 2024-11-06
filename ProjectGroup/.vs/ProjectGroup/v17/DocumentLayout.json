@@ -3,23 +3,26 @@
   "WorkspaceRootPath": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\message.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\message.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\authentication\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\authentication\\login.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\paymentsuccess.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\paymentsuccess.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\authentication\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\authentication\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\paymentcancel.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\paymentcancel.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DC6C737E-E2E2-4EAD-8FB2-EC59794C3D11}|..\\TicketResell_DAO\\TicketResell_DAO.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_dao\\transactiondao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\message.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C7DC98-C4C0-4953-B137-3FAF3DD9DC5C}|..\\TicketResell_Service\\TicketResell_Service.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_service\\transactionservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE3DAC5F-863C-4B34-AAA5-33F92196BBDB}|..\\TIcketResell_Repository\\TIcketResell_Repository.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_repository\\transactionrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -29,69 +32,82 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Login.cshtml.cs",
-              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml.cs",
-              "RelativeDocumentMoniker": "Pages\\Authentication\\Login.cshtml.cs",
-              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml.cs",
-              "RelativeToolTip": "Pages\\Authentication\\Login.cshtml.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwCwAAAAuAAAAAAAAAA==",
+              "Title": "PaymentCancel.cshtml.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\PaymentCancel.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customer\\PaymentCancel.cshtml.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\PaymentCancel.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customer\\PaymentCancel.cshtml.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAkwEAAAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T04:03:05.473Z",
+              "WhenOpened": "2024-11-06T15:13:06.885Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Login.cshtml",
-              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml",
-              "RelativeDocumentMoniker": "Pages\\Authentication\\Login.cshtml",
-              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Authentication\\Login.cshtml",
-              "RelativeToolTip": "Pages\\Authentication\\Login.cshtml",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-05T04:03:00.817Z",
+              "DocumentIndex": 1,
+              "Title": "PaymentSuccess.cshtml.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\PaymentSuccess.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customer\\PaymentSuccess.cshtml.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\PaymentSuccess.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customer\\PaymentSuccess.cshtml.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwHEAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T15:10:34.618Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "TransactionRepository.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TransactionRepository.cs",
+              "RelativeDocumentMoniker": "..\\TIcketResell_Repository\\TransactionRepository.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TransactionRepository.cs",
+              "RelativeToolTip": "..\\TIcketResell_Repository\\TransactionRepository.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAIwB0AAACbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T15:08:38.821Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "TransactionDAO.cs",
-              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TransactionDAO.cs",
-              "RelativeDocumentMoniker": "..\\TicketResell_DAO\\TransactionDAO.cs",
-              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TransactionDAO.cs",
-              "RelativeToolTip": "..\\TicketResell_DAO\\TransactionDAO.cs",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAwwEwAAABGAAAAAAAAAA==",
+              "Title": "TransactionService.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TransactionService.cs",
+              "RelativeDocumentMoniker": "..\\TicketResell_Service\\TransactionService.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TransactionService.cs",
+              "RelativeToolTip": "..\\TicketResell_Service\\TransactionService.cs",
+              "ViewState": "AgIAAIEAAAAAAAAAAAAUwJUAAACcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-05T03:45:20.663Z",
+              "WhenOpened": "2024-11-05T09:21:36.892Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "Message.cshtml",
               "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml",
               "RelativeDocumentMoniker": "Pages\\Customer\\Message.cshtml",
               "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml",
               "RelativeToolTip": "Pages\\Customer\\Message.cshtml",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAAwF8AAABpAAAAAAAAAA==",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAAAFYAAABdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2024-11-03T10:35:13.384Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "Message.cshtml.cs",
               "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Customer\\Message.cshtml.cs",
               "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml.cs",
               "RelativeToolTip": "Pages\\Customer\\Message.cshtml.cs",
-              "ViewState": "AgIAACAAAAAAAAAAAAArwE4AAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAgwJ0AAAA6AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-04T15:38:25.869Z",
               "EditorCaption": ""

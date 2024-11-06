@@ -14,15 +14,17 @@ namespace ProjectGroup.Pages.Customer
         private readonly ITransactionService _transactionService;
         private readonly ITicketService _ticketService;
         private readonly IConfiguration _configuration;
+        private readonly IUserService _userService;
 
         public Guid? UserId { get; private set; }
         public Guid? RoleId { get; private set; }
         public List<Conversation> Conversations { get; set; } = new List<Conversation>();
         public Conversation? CurrentConversation { get; set; }
         public List<Chat> Messages { get; set; } = new List<Chat>();
+        public Transactions? Transactions { get; set; }
 
         public MessageModel(IChatService chatService, IHttpContextAccessor httpContextAccessor, ITransactionService transactionService,
-                            ITicketService ticketService, IConfiguration configuration)
+                            ITicketService ticketService, IConfiguration configuration, IUserService userService)
         {
             _chatService = chatService;
             string userIdString = httpContextAccessor.HttpContext.Session.GetString("UserId");
@@ -33,6 +35,7 @@ namespace ProjectGroup.Pages.Customer
             _transactionService = transactionService;
             _ticketService = ticketService;
             _configuration = configuration;
+            _userService = userService;
         }
 
         public async Task<IActionResult> OnGetAsync(Guid? buyerId, Guid? sellerId, Guid? ticketId)
@@ -60,114 +63,127 @@ namespace ProjectGroup.Pages.Customer
                 {
                     Messages = await _chatService.GetMessagesByConversationIdAsync(CurrentConversation.Id);
                 }
+
+                if (Transactions != null) 
+                {
+                    Transactions = await _transactionService.GetTransactionBySomeIdsAsync(buyerId.Value, sellerId.Value, ticketId.Value);
+                }             
             }
 
             return Page();
         }
 
-        public async Task<IActionResult> OnPostSendMessageAsync(Guid conversationId, string messageContent)
+        public async Task<IActionResult> OnPostSendMessageAsync(Guid conversationId, Guid? buyerId, Guid? sellerId, string messageContent)
         {
-            if (!string.IsNullOrWhiteSpace(messageContent) && UserId.HasValue)
+            var currentUserId = UserId;
+
+            Guid? BuyerId = null;
+            Guid? SellerId = null;
+
+            if (currentUserId == buyerId)
+            {
+                BuyerId = currentUserId;
+            }
+            else if (currentUserId == sellerId)
+            {
+                SellerId = currentUserId;
+            }
+
+            Console.WriteLine($"Current User: {UserId} : Buyer: {buyerId} : Seller: {sellerId}");
+
+            bool isSenderBuyer = BuyerId.HasValue;
+
+            if (!string.IsNullOrWhiteSpace(messageContent) && currentUserId.HasValue)
             {
                 var chat = new Chat
                 {
                     Id = Guid.NewGuid(),
                     ConversationId = conversationId,
-                    SellerId = UserId,
+                    BuyerId = BuyerId,
+                    SellerId = SellerId,
                     Message = messageContent,
                     SentAt = DateTime.UtcNow,
-                    IsSender = true,
+                    IsSender = isSenderBuyer
                 };
+
                 await _chatService.SendMessageAsync(chat);
             }
-            return RedirectToPage(new { sellerId = conversationId });
+            return RedirectToPage(new { conversationId = conversationId });
         }
 
-        public async Task<IActionResult> OnPostCreateTransactionAsync(Guid conversationId, Guid recipientId, Guid sellerId, Guid ticketId)
+        public async Task<IActionResult> OnPostCreateTransactionAsync(Guid conversationId, Guid buyerId, Guid sellerId, Guid ticketId)
         {
+            var currentUserId = UserId;
+
+            Guid? BuyerId = null;
+            Guid? SellerId = null;
+
             var ticket = await _ticketService.GetTicketByIdAsync(ticketId);
 
             if (ticket == null)
             {
-                return NotFound("Ticket not found for transaction creation.");
+                TempData["ErrorMessage"] = "Ticket not found for transaction creation.";
+                return Page();
             }
 
-            var approvalUrl = await _transactionService.CreateTransactionAsync(conversationId, recipientId, sellerId, (decimal)ticket.Price);
+            var approvalUrl = await _transactionService.CreateTransactionAsync(conversationId, buyerId, sellerId, ticketId, (decimal)ticket.Price);
 
-            if (!string.IsNullOrEmpty(approvalUrl))
+            if (currentUserId == buyerId)
             {
+                BuyerId = currentUserId;
+            }
+            else if (currentUserId == sellerId)
+            {
+                SellerId = currentUserId;
+            }
+
+            bool isSenderBuyer = BuyerId.HasValue;
+
+            if (!string.IsNullOrEmpty(approvalUrl) && currentUserId.HasValue)
+            {
+                var user = await _userService.GetUserByIdAsync(UserId);
+
+                if (user != null)
+                {
+                    int totalReputationAdjustment = 0;
+
+                    int reputationPointsPendingPunishment = await _transactionService.CheckBookingPunishmentForPendingAsync(UserId);
+                    if (reputationPointsPendingPunishment > 0)
+                    {
+                        if (reputationPointsPendingPunishment == 3)
+                            totalReputationAdjustment -= 4;
+                        else if (reputationPointsPendingPunishment > 3 && reputationPointsPendingPunishment <= 6)
+                            totalReputationAdjustment -= 5;
+                        else if (reputationPointsPendingPunishment == 1 || reputationPointsPendingPunishment == 2)
+                            totalReputationAdjustment -= 2;
+                        else
+                            totalReputationAdjustment -= 6;
+
+                    }
+
+                    user.ReputationPoints += totalReputationAdjustment;
+                    await _userService.UpdateUserAsync(user);
+                }
+
                 var paymentMessage = new Chat
                 {
                     Id = Guid.NewGuid(),
                     ConversationId = conversationId,
-                    SellerId = UserId,
+                    BuyerId = BuyerId,
+                    SellerId = SellerId,
                     Message = $"Please complete the payment by clicking on this link: <a href='{approvalUrl}' target='_blank'>Pay Now</a>",
                     SentAt = DateTime.UtcNow,
-                    IsSender = true,
+                    IsSender = isSenderBuyer,
                 };
 
                 await _chatService.SendMessageAsync(paymentMessage);
 
-                TempData["Message"] = "Transaction created successfully! Payment link sent to the buyer.";
-                return RedirectToPage("/Customer/Message", new { buyerId = recipientId, sellerId = sellerId });
+                TempData["SuccessMessage"] = "Transaction created successfully! Payment link sent to the buyer.";
+                return RedirectToPage("/Customer/Message", new { conversationId = conversationId });
             }
 
-            TempData["Error"] = "Failed to create transaction.";
+            TempData["ErrorMessage"] = "Failed to create transaction.";
             return Page();
-        }
-
-        public async Task<IActionResult> OnGetSuccessAsync(string paymentId)
-        {
-            var config = new Dictionary<string, string>
-            {
-                { "mode", _configuration["PayPal:Mode"] },
-                { "clientId", _configuration["PayPal:ClientId"] },
-                { "clientSecret", _configuration["PayPal:ClientSecret"] }
-            };
-
-            var apiContext = new PayPal.Api.APIContext(new PayPal.Api.OAuthTokenCredential(config["clientId"], config["clientSecret"]).GetAccessToken())
-            {
-                Config = new Dictionary<string, string>
-                {
-                    { "mode", config["mode"] }
-                }
-            };
-
-            var payment = Payment.Get(apiContext, paymentId);
-
-            if (payment.state.ToLower() != "approved")
-            {
-                TempData["Error"] = "Payment was not approved.";
-                return RedirectToPage("/Error");
-            }
-
-            var transaction = await _transactionService.GetByPayPalPaymentIdAsync(paymentId);
-            if (transaction != null)
-            {
-                transaction.TransactionStatus = "Completed";
-                await _transactionService.UpdateTransactionAsync(transaction);
-
-                var ticket = await _ticketService.GetTicketByIdAsync(transaction.TicketId);
-                if (ticket != null)
-                {
-                    ticket.TicketStatus = "Sold";
-                    await _ticketService.UpdateTicketAsync(ticket);
-                }
-
-                await _transactionService.GetMoneyWalletFromBuyerAsync(transaction.SellerId, (decimal)transaction.Amount);
-
-                TempData["Message"] = "Transaction completed successfully!";
-                return RedirectToPage("/Customer/Profile", new { id = transaction.Id });
-            }
-
-            TempData["Error"] = "Transaction not found.";
-            return RedirectToPage("/Error");
-        }
-
-        public IActionResult OnGetCancel()
-        {
-            TempData["Message"] = "Transaction was canceled.";
-            return RedirectToPage("/Customer/Profile");
         }
     }
 }

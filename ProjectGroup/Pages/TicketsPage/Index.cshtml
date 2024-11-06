@@ -33,10 +33,15 @@
                         </div>
 
                         <div class="card-footer text-center bg-light">
-                            <button type="button" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#ticketModal-@ticket.Id">
+                            <button type="button" class="btn btn-outline-primary btn-sm"
+                                    data-bs-toggle="modal" data-bs-target="#ticketModal-@ticket.Id"
+                            @(Model.UserId == null ? "disabled" : "")>
                                 View Details
                             </button>
-                            <button type="button" class="btn btn-success btn-sm">Buy Now</button>
+                            <button type="button" class="btn btn-success btn-sm"
+                                    onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : "buyNowFunction()")">
+                                Buy Now
+                            </button>
                         </div>
                     </div>
 
@@ -59,7 +64,7 @@
                                         <p><strong>Username:</strong> @ticket.Owner?.Username</p>
                                         <p>
                                             <strong>Contact:</strong>
-                                            @if (Model.UserId != ticket.Owner?.Id)
+                                            @if (Model.UserId != ticket.Owner?.Id && ticket.TicketStatus != "Sold")
                                             {
                                                 <a href="@Url.Page("/Customer/Message", new { buyerId = Model.UserId, sellerId = ticket.Owner?.Id, ticketId = ticket.Id})">Start Conversation</a>
                                             }
