@@ -2,6 +2,7 @@ using Microsoft.EntityFrameworkCore;
 using TicketResell_DAO;
 using TIcketResell_Repository;
 using TicketResell_Service;
+using TicketResell_Service.Utilities;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -34,6 +35,9 @@ builder.Services.AddScoped<IChatService, ChatService>();
 
 builder.Services.AddDbContext<TicketResellContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("TicketResellDBConnection") ?? throw new InvalidOperationException("Connection string 'DBConnect' not found.")));
+
+builder.Services.Configure<EmailSettings>(builder.Configuration.GetSection("EmailSettings"));
+builder.Services.AddTransient<EmailService>();
 
 builder.Services.AddSession();
 builder.Services.AddHttpContextAccessor();

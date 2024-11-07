@@ -29,14 +29,22 @@ namespace TicketResell_DAO
             }
         }
 
-        public async Task<bool> AddNotification(Notification notification)
+        public async Task<Notification> AddNotification(Guid? userId, string message)
         {
+            var notification = new Notification
+            {
+                Id = Guid.NewGuid(),
+                Message = message,
+                SentAt = DateTime.UtcNow,
+                UserId = userId
+            };
+
             await _context.Notifications.AddAsync(notification);
             await _context.SaveChangesAsync();
-            return true;
+            return notification;
         }
 
-        public async Task<List<Notification>> GetNotificationsByUserID(Guid userID)
+        public async Task<List<Notification>> GetNotificationsByUserID(Guid? userID)
         {
             return await _context.Notifications.Where(n => n.UserId == userID).ToListAsync();
         }
@@ -56,6 +64,11 @@ namespace TicketResell_DAO
             _context.Notifications.Remove(notification);
             await _context.SaveChangesAsync();
             return true;
+        }
+
+        public async Task<int> CountNotificationByUserId(Guid? userId)
+        {
+            return await _context.Notifications.CountAsync(n => n.UserId == userId);
         }
     }
 }

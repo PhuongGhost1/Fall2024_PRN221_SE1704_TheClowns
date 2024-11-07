@@ -462,6 +462,10 @@ public partial class TicketResellContext : DbContext
                 .HasMaxLength(20)
                 .HasColumnName("phone");
             entity.Property(e => e.ReputationPoints).HasColumnName("reputation_points");
+            entity.Property(e => e.IsVerified)
+              .HasColumnName("is_verified")
+              .HasColumnType("tinyint")
+              .HasConversion<int>();
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .HasColumnName("username");

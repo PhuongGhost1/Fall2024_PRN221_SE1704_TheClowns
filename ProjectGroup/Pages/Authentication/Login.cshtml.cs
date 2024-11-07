@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TicketResell_Service;
+using TicketResell_Service.Utilities;
 
 namespace ProjectGroup.Pages.Authentication
 {
@@ -24,12 +25,12 @@ namespace ProjectGroup.Pages.Authentication
             var user = await _userService.GetUserByEmailAsync(email);
             if (user == null) return Redirect("/Error");
 
-            if (!password.Equals(user.Password.Trim()))
+            string hashedPassword = SecurityHelper.HashPassword(password);
+            if (!hashedPassword.Equals(user.Password.Trim()))
             {
-                TempData["ErrorMessage"] = "Email or Password is wrong!!!";
+                TempData["ErrorMessage"] = "Email or Password is wrong!";
                 return RedirectToPage("/Authentication/Login");
             }
-            
 
             var userRole = await _userService.GetUserRoleAsync(user.Id);
             if (userRole == null) return Redirect("/Error");

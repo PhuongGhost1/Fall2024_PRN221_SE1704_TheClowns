@@ -21,6 +21,8 @@ public partial class User
 
     public double? Wallet { get; set; }
 
+    public bool? IsVerified { get; set; }
+
     public virtual ICollection<Chat> ChatBuyers { get; set; } = new List<Chat>();
 
     public virtual ICollection<Chat> ChatSellers { get; set; } = new List<Chat>();

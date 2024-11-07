@@ -12,10 +12,11 @@ namespace ProjectGroup.Pages.Customer
         private readonly ITransactionService _transactionService;
         private readonly IChatService _chatService;
         private readonly IUserService _userService;
+        private readonly INotificationService _notificationService;
         public Guid? UserId { get; private set; }
         public Guid? RoleId { get; private set; }
         public PaymentCancelModel(IConfiguration configuration, ITransactionService transactionService, IHttpContextAccessor httpContextAccessor,
-                                IChatService chatService, IUserService userService)
+                                IChatService chatService, IUserService userService, INotificationService notificationService)
         {
             _configuration = configuration;
             _transactionService = transactionService;
@@ -27,6 +28,7 @@ namespace ProjectGroup.Pages.Customer
 
             UserId = string.IsNullOrEmpty(userIdString) ? (Guid?)null : Guid.Parse(userIdString);
             RoleId = string.IsNullOrEmpty(roleIdString) ? (Guid?)null : Guid.Parse(roleIdString);
+            _notificationService = notificationService;
         }
         public async Task<IActionResult> OnGetAsync(Guid transactionId)
         {
@@ -86,6 +88,8 @@ namespace ProjectGroup.Pages.Customer
                     };
 
                     await _chatService.SendMessageAsync(chat);
+
+                    await _notificationService.AddNotificationAsync(UserId, "Transaction canceled successfully! Please give us your reason...");
                 }
 
                 TempData["SuccessMessage"] = "Transaction was canceled.";

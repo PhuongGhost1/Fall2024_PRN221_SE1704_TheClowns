@@ -54,14 +54,16 @@ namespace TicketResell_DAO
                 .FirstOrDefaultAsync(c => c.BuyerId == buyerId && c.SellerId == sellerId && c.EndedAt == null && c.TicketId == ticketId);
         }
 
-        public async Task EndConversationAsync(Guid conversationId)
+        public async Task<bool> EndConversation(Guid? conversationId)
         {
-            var conversation = await _context.Conversations.FindAsync(conversationId);
-            if (conversation != null)
-            {
-                conversation.EndedAt = DateTime.UtcNow;
-                await _context.SaveChangesAsync();
-            }
+            var conversation = await _context.Conversations.FirstOrDefaultAsync(c => c.Id == conversationId);
+
+            if (conversation == null) return false;
+
+            conversation.EndedAt = DateTime.UtcNow;
+            _context.Conversations.Update(conversation);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         public async Task<bool> AddMessageAsync(Chat message)

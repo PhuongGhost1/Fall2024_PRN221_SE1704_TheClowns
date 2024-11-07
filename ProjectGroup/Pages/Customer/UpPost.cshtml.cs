@@ -11,6 +11,7 @@ namespace ProjectGroup.Pages.Customer
         private readonly IHostEnvironment _hostEnvironment;
         private readonly ITicketService _ticketService;
         private readonly IHttpContextAccessor _httpContextAccessor;
+        private readonly INotificationService _notificationService;
 
         [BindProperty]
         public Ticket Ticket { get; set; } = new Ticket();
@@ -21,11 +22,13 @@ namespace ProjectGroup.Pages.Customer
         [BindProperty]
         public Guid? UserId { get; set; }
 
-        public UpPostModel(IHostEnvironment hostEnvironment, ITicketService ticketService, IHttpContextAccessor httpContextAccessor)
+        public UpPostModel(IHostEnvironment hostEnvironment, ITicketService ticketService, IHttpContextAccessor httpContextAccessor,
+                        INotificationService notificationService)
         {
             _hostEnvironment = hostEnvironment;
             _ticketService = ticketService;
             _httpContextAccessor = httpContextAccessor;
+            _notificationService = notificationService;
         }
 
         public IActionResult OnGet()
@@ -77,6 +80,8 @@ namespace ProjectGroup.Pages.Customer
                 bool result = await _ticketService.AddTicketAsync(Ticket);
                 if (result)
                 {
+                    await _notificationService.AddNotificationAsync(UserId, "Ticket added successfully! Waiting the buyer to looking for the post");
+
                     TempData["SuccessMessage"] = "Ticket added successfully!";
                     return RedirectToPage("/Customer/UpPost");
                 }

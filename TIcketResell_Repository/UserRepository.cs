@@ -21,6 +21,7 @@ namespace TIcketResell_Repository
         Task<bool> SaveNewPassword(Guid userId, string newPassword);
         Task<User> FindByUsername(string username);
         Task<bool> ValidatePassword(Guid userId, string currentPassword);
+        Task<bool> IsEmailExist(string email);
     }
 
     public class UserRepository : IUserRepository
@@ -38,6 +39,8 @@ namespace TIcketResell_Repository
         public async Task<User> GetByIdAsync(Guid? id) => await UserDAO.getInstance.GetByIdAsync(id);
 
         public async Task<UserRole> GetUserRoleAsync(Guid userId) => await UserDAO.getInstance.GetUserRoleAsync(userId);
+
+        public async Task<bool> IsEmailExist(string email) => await UserDAO.getInstance.IsEmailExist(email);
 
         public async Task<bool> SaveNewPassword(Guid userId, string newPassword) => await UserDAO.getInstance.SaveNewPassword(userId, newPassword);
 

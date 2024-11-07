@@ -15,6 +15,7 @@ namespace TicketResell_Service
         Task<Conversation> CreateConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId);
         Task<List<Chat>> GetMessagesByConversationIdAsync(Guid conversationId);
         Task<Conversation?> GetActiveConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId);
+        Task<bool> EndConversationAsync(Guid? conversationId);
     }
     
     public class ChatService : IChatService
@@ -44,5 +45,6 @@ namespace TicketResell_Service
             return await _chatRepository.GetActiveConversationAsync(buyerId, sellerId, ticketId);
         }
 
+        public async Task<bool> EndConversationAsync(Guid? conversationId) => await _chatRepository.EndConversation(conversationId);
     }
 }

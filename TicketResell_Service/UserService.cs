@@ -21,6 +21,7 @@ namespace TicketResell_Service
         Task<bool> SaveNewPassword(Guid userId, string newPassword);
         Task<User> FindByUsername(string username);
         Task<bool> ValidatePasswordAsync(Guid userId, string currentPassword);
+        Task<bool> IsEmailExistAsync(string email);
     }
     
     public class UserService : IUserService
@@ -43,17 +44,23 @@ namespace TicketResell_Service
 
         public async Task<UserRole> GetUserRoleAsync(Guid userId) => await _userRepository.GetUserRoleAsync(userId);
 
+        public async Task<bool> IsEmailExistAsync(string email) => await _userRepository.IsEmailExist(email);
+
         public async Task<bool> RegisterUserAsync(User user) 
         {
             bool flag = true;
+
+            var passwordHash = Utilities.SecurityHelper.HashPassword(user.Password);
+
             User userModel = new User()
             {
                 Id = Guid.NewGuid(),
                 Username = user.Username,
                 Email = user.Email,
-                Password = user.Password,
+                Password = passwordHash,
                 ReputationPoints = 0,
                 CreatedAt = DateTime.Now,
+                IsVerified = false,
                 UserRoles = new List<UserRole>(){
                     new UserRole()
                     {

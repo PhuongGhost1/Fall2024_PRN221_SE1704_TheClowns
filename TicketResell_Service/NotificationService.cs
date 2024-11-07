@@ -10,9 +10,10 @@ namespace TicketResell_Service
 {
     public interface INotificationService
     {
-        Task<List<Notification>> GetNotificationsByUserIdAsync(Guid userId);
-        Task AddNotificationAsync(Guid userId, string message);
+        Task<List<Notification>> GetNotificationsByUserIdAsync(Guid? userId);
+        Task<Notification> AddNotificationAsync(Guid? userId, string message);
         Task DeleteNotificationAsync(Guid notificationId);
+        Task<int> CountNotificationByUserIdAsync(Guid? userId);
     }
 
     public class NotificationService : INotificationService
@@ -23,10 +24,12 @@ namespace TicketResell_Service
             _notificationRepository = notificationRepository;
         }
 
-        public async Task AddNotificationAsync(Guid userId, string message) => await _notificationRepository.AddAsync(new Notification { UserId = userId, Message = message });
+        public async Task<Notification> AddNotificationAsync(Guid? userId, string message) => await _notificationRepository.AddAsync(userId, message);
+
+        public async Task<int> CountNotificationByUserIdAsync(Guid? userId) => await _notificationRepository.CountNotificationByUserId(userId);
 
         public async Task DeleteNotificationAsync(Guid notificationId) => await _notificationRepository.DeleteAsync(notificationId);
 
-        public async Task<List<Notification>> GetNotificationsByUserIdAsync(Guid userId) => await _notificationRepository.GetByUserIdAsync(userId);
+        public async Task<List<Notification>> GetNotificationsByUserIdAsync(Guid? userId) => await _notificationRepository.GetByUserIdAsync(userId);
     }
 }

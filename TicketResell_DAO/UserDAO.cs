@@ -59,7 +59,7 @@ namespace TicketResell_DAO
             bool flag = true;
             if (user != null)
             {
-                _context.Users.Add(user);
+                await _context.Users.AddAsync(user);
                 await _context.SaveChangesAsync();
             }
             else
@@ -134,6 +134,11 @@ namespace TicketResell_DAO
             }
 
             return true;
+        }
+
+        public async Task<bool> IsEmailExist(string email)
+        {
+            return await _context.Users.AnyAsync(u => u.Email == email);
         }
     }
 }

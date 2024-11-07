@@ -16,10 +16,12 @@ namespace ProjectGroup.Pages.Customer
         private readonly ITicketService _ticketService;
         private readonly IChatService _chatService;
         private readonly IUserService _userService;
+        private readonly INotificationService _notificationService;
         public Guid? UserId { get; private set; }
         public Guid? RoleId { get; private set; }
         public PaymentSuccessModel(IConfiguration configuration, ITransactionService transactionService, ITicketService ticketService,
-                                    IHttpContextAccessor httpContextAccessor, IChatService chatService, IUserService userService)
+                                    IHttpContextAccessor httpContextAccessor, IChatService chatService, IUserService userService,
+                                    INotificationService notificationService)
         {
             _configuration = configuration;
             _transactionService = transactionService;
@@ -32,7 +34,7 @@ namespace ProjectGroup.Pages.Customer
 
             UserId = string.IsNullOrEmpty(userIdString) ? (Guid?)null : Guid.Parse(userIdString);
             RoleId = string.IsNullOrEmpty(roleIdString) ? (Guid?)null : Guid.Parse(roleIdString);
-
+            _notificationService = notificationService;
         }
         public async Task<IActionResult> OnGetAsync(string paymentId, string payerId)
         {
@@ -128,6 +130,10 @@ namespace ProjectGroup.Pages.Customer
                     };
 
                     await _chatService.SendMessageAsync(chat);
+
+                    await _notificationService.AddNotificationAsync(UserId, "Transaction completed successfully! Thank you for your support!");
+
+                    await _chatService.EndConversationAsync(conversation.Id);
                 }
 
                 TempData["SuccessMessage"] = "Transaction completed successfully!";

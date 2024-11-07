@@ -47,6 +47,33 @@
                             if (!string.IsNullOrEmpty(Username) && RoleId != null)
                             {
                                 <li class="nav-item dropdown">
+                                    <a class="nav-link position-relative" href="#" id="notificationDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        <i class="fas fa-bell"></i>
+                                        <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">3</span>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="notificationDropdown" style="width: 300px;">
+                                        <li class="dropdown-header">Notifications</li>
+                                        <li>
+                                            <a class="dropdown-item" href="/Customer/Notification/1">
+                                                <small class="text-muted">2 mins ago</small><br>
+                                                New message from John Doe
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="/Customer/Notification/2">
+                                                <small class="text-muted">10 mins ago</small><br>
+                                                Your ticket has been updated
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item text-center" href="/Customer/Notifications">
+                                                View all notifications
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                                <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle text-dark" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                         Hello, @Username!
                                     </a>

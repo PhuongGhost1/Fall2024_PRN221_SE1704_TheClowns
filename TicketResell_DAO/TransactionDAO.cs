@@ -123,5 +123,11 @@ namespace TicketResell_DAO
 
             return delayedPendingCount;
         }
+
+        public async Task<bool> CheckIsTransactionCompleted(Guid? conversationId)
+        {
+            return await _context.Transactions.AnyAsync(t => t.Ticket.Conversations.Any(c => c.Id == conversationId) && 
+                                        t.TransactionStatus == "Completed");
+        }
     }
 }

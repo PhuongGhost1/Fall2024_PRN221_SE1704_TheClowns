@@ -24,6 +24,7 @@ namespace TicketResell_Service
         Task<Transactions?> GetTransactionBySomeIdsAsync(Guid? buyerId, Guid? sellerId, Guid? ticketId);
         Task<int> CheckBookingPunishmentAsync(Guid? userId, string status);
         Task<int> CheckBookingPunishmentForPendingAsync(Guid? userId);
+        Task<bool> CheckIsTransactionCompletedAsync(Guid? conversationId);
     }
 
     public class TransactionService : ITransactionService
@@ -148,5 +149,7 @@ namespace TicketResell_Service
         public async Task<int> CheckBookingPunishmentAsync(Guid? userId, string status) => await _transactionRepository.CheckBookingPunishment(userId, status);
 
         public async Task<int> CheckBookingPunishmentForPendingAsync(Guid? userId) => await _transactionRepository.CheckBookingPunishmentForPending(userId);
+
+        public async Task<bool> CheckIsTransactionCompletedAsync(Guid? conversationId) => await _transactionRepository.CheckIsTransactionCompleted(conversationId);
     }
 }

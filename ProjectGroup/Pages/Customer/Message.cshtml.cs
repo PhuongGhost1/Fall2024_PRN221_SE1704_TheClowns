@@ -15,6 +15,7 @@ namespace ProjectGroup.Pages.Customer
         private readonly ITicketService _ticketService;
         private readonly IConfiguration _configuration;
         private readonly IUserService _userService;
+        private readonly INotificationService _notificationService;
 
         public Guid? UserId { get; private set; }
         public Guid? RoleId { get; private set; }
@@ -24,7 +25,7 @@ namespace ProjectGroup.Pages.Customer
         public Transactions? Transactions { get; set; }
 
         public MessageModel(IChatService chatService, IHttpContextAccessor httpContextAccessor, ITransactionService transactionService,
-                            ITicketService ticketService, IConfiguration configuration, IUserService userService)
+                            ITicketService ticketService, IConfiguration configuration, IUserService userService, INotificationService notificationService)
         {
             _chatService = chatService;
             string userIdString = httpContextAccessor.HttpContext.Session.GetString("UserId");
@@ -36,6 +37,7 @@ namespace ProjectGroup.Pages.Customer
             _ticketService = ticketService;
             _configuration = configuration;
             _userService = userService;
+            _notificationService = notificationService;
         }
 
         public async Task<IActionResult> OnGetAsync(Guid? buyerId, Guid? sellerId, Guid? ticketId)
@@ -56,10 +58,15 @@ namespace ProjectGroup.Pages.Customer
 
             if (buyerId.HasValue && sellerId.HasValue && ticketId.HasValue)
             {
-                CurrentConversation = await _chatService.GetActiveConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value)
-                                      ?? await _chatService.CreateConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value);
+                CurrentConversation = await _chatService.GetActiveConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value);                   
 
-                if (CurrentConversation != null)
+                if (CurrentConversation == null)
+                {
+                    CurrentConversation = await _chatService.CreateConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value);
+
+                    await _notificationService.AddNotificationAsync(UserId, "Your conversation has been procced");                   
+                }
+                else
                 {
                     Messages = await _chatService.GetMessagesByConversationIdAsync(CurrentConversation.Id);
                 }
@@ -123,6 +130,13 @@ namespace ProjectGroup.Pages.Customer
             if (ticket == null)
             {
                 TempData["ErrorMessage"] = "Ticket not found for transaction creation.";
+                return Page();
+            }
+
+            var isTransactionCompleted = await _transactionService.CheckIsTransactionCompletedAsync(conversationId);
+            if (isTransactionCompleted)
+            {
+                TempData["ErrorMessage"] = "This converstation has already completed transaction. Cannot create another transaction!!!";
                 return Page();
             }
 

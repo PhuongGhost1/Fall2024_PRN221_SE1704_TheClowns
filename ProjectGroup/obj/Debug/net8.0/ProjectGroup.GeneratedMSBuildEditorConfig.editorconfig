@@ -50,6 +50,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cRm9yZ290UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -58,12 +62,20 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9nb3V0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/EditTicket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRWRpdFRpY2tldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/Message.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/Notifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcTm90aWZpY2F0aW9ucy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/PaymentCancel.cshtml]

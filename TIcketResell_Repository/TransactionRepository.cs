@@ -20,6 +20,7 @@ namespace TIcketResell_Repository
         Task<Transactions?> GetTransactionBySomeIds(Guid? buyerId, Guid? sellerId, Guid? ticketId);
         Task<int> CheckBookingPunishment(Guid? userId, string status);
         Task<int> CheckBookingPunishmentForPending(Guid? userId);
+        Task<bool> CheckIsTransactionCompleted(Guid? conversationId);
     }
     public class TransactionRepository : ITransactionRepository
     {
@@ -28,6 +29,8 @@ namespace TIcketResell_Repository
         public async Task<int> CheckBookingPunishment(Guid? userId, string status) => await TransactionDAO.getInstance.CheckBookingPunishment(userId, status);
 
         public async Task<int> CheckBookingPunishmentForPending(Guid? userId) => await TransactionDAO.getInstance.CheckBookingPunishmentForPending(userId);
+
+        public async Task<bool> CheckIsTransactionCompleted(Guid? conversationId) => await TransactionDAO.getInstance.CheckIsTransactionCompleted(conversationId);
 
         public async Task<Transactions> GetByIdAsync(Guid id) => await TransactionDAO.getInstance.GetTransactionByID(id);
 
