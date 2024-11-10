@@ -27,9 +27,33 @@ namespace TicketResell_DAO
             return await _context.EventTypes.ToListAsync();
         }
 
-        public async Task<EventType> GetEventById(Guid? id)
+        public async Task<EventType?> GetEventById(Guid? id)
         {
-            return await _context.EventTypes.FindAsync(id);
+            return await _context.EventTypes.FirstOrDefaultAsync(e => e.Id == id);
+        }
+
+        public async Task<bool> AddEventType(EventType eventType)
+        {
+            await _context.EventTypes.AddAsync(eventType);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> UpdateEventType(EventType eventType)
+        {
+            _context.EventTypes.Update(eventType);
+            await _context.SaveChangesAsync();
+            return true;
+        }
+
+        public async Task<bool> DeleteEventType(Guid? id)
+        {
+            var eventType = await _context.EventTypes.FirstOrDefaultAsync(e => e.Id == id);
+            if (eventType == null) return false;
+
+            _context.EventTypes.Remove(eventType);
+            await _context.SaveChangesAsync();
+            return true;
         }
     }
 }

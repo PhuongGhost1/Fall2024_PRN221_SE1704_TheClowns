@@ -114,6 +114,8 @@ namespace ProjectGroup.Pages.Customer
                 };
 
                 await _chatService.SendMessageAsync(chat);
+
+                await _notificationService.AddNotificationAsync(BuyerId ?? SellerId, messageContent);
             }
             return RedirectToPage(new { conversationId = conversationId });
         }
@@ -191,6 +193,8 @@ namespace ProjectGroup.Pages.Customer
                 };
 
                 await _chatService.SendMessageAsync(paymentMessage);
+
+                await _notificationService.AddNotificationAsync(buyerId, "Transaction created successfully! Payment link sent to the buyer.");
 
                 TempData["SuccessMessage"] = "Transaction created successfully! Payment link sent to the buyer.";
                 return RedirectToPage("/Customer/Message", new { conversationId = conversationId });

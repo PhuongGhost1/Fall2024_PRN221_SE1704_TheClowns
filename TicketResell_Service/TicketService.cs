@@ -10,7 +10,7 @@ namespace TicketResell_Service
 {
     public interface ITicketService
     {
-        Task<List<Ticket>> GetTicketsAsync(Guid? userId);
+        Task<List<Ticket>> GetTicketsAsync();
         Task<Ticket?> GetTicketByIdAsync(Guid? id);
         Task<List<Ticket>> GetTicketsByOwnerIdAsync(Guid? ownerId);
         Task<List<Ticket>> GetByEventTypeAsync(Guid eventTypeId);
@@ -35,7 +35,7 @@ namespace TicketResell_Service
 
         public async Task<Ticket?> GetTicketByIdAsync(Guid? id) => await _ticketRepository.GetByIdAsync(id);
 
-        public async Task<List<Ticket>> GetTicketsAsync(Guid? userId) => await _ticketRepository.GetTickets(userId);
+        public async Task<List<Ticket>> GetTicketsAsync() => await _ticketRepository.GetTickets();
 
         public async Task<List<Ticket>> GetTicketsByOwnerIdAsync(Guid? ownerId) => await _ticketRepository.GetByOwnerIdAsync(ownerId);
 

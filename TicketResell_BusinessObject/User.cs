@@ -19,9 +19,9 @@ public partial class User
 
     public string? Password { get; set; }
 
-    public double? Wallet { get; set; }
-
     public bool? IsVerified { get; set; }
+
+    public decimal? Wallet { get; set; }
 
     public virtual ICollection<Chat> ChatBuyers { get; set; } = new List<Chat>();
 

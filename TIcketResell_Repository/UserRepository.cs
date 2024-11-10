@@ -22,6 +22,7 @@ namespace TIcketResell_Repository
         Task<User> FindByUsername(string username);
         Task<bool> ValidatePassword(Guid userId, string currentPassword);
         Task<bool> IsEmailExist(string email);
+        Task<List<User>> GetAllUsers();
     }
 
     public class UserRepository : IUserRepository
@@ -33,6 +34,8 @@ namespace TIcketResell_Repository
         public async Task<User> FindByUsername(string username) => await UserDAO.getInstance.FindByUsername(username);
 
         public async Task<IEnumerable<User>> GetAllAsync() => await UserDAO.getInstance.GetAllAsync();
+
+        public async Task<List<User>> GetAllUsers() => await UserDAO.getInstance.GetAllUsers();
 
         public async Task<User> GetByEmailAsync(string email) => await UserDAO.getInstance.GetByEmailAsync(email);
 

@@ -15,5 +15,9 @@ public partial class Feedback
 
     public DateTime? SubmittedAt { get; set; }
 
+    public Guid? TicketId { get; set; }
+
+    public virtual Ticket? Ticket { get; set; }
+
     public virtual User? User { get; set; }
 }

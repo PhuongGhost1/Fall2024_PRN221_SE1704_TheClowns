@@ -25,7 +25,7 @@ public partial class Transactions
 
     public decimal PenaltyAmount { get; set; }
 
-    public string PaypalPaymentId { get; set; } = null!;
+    public string? PaypalPaymentId { get; set; }
 
     public virtual User Buyer { get; set; } = null!;
 

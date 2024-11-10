@@ -53,7 +53,6 @@ public partial class TicketResellContext : DbContext
         {
             optionsBuilder.UseSqlServer(GetConnectionString());
         }
-
     }
 
     private string GetConnectionString()
@@ -167,7 +166,12 @@ public partial class TicketResellContext : DbContext
             entity.Property(e => e.SubmittedAt)
                 .HasColumnType("datetime")
                 .HasColumnName("submitted_at");
+            entity.Property(e => e.TicketId).HasColumnName("ticketId");
             entity.Property(e => e.UserId).HasColumnName("user_id");
+
+            entity.HasOne(d => d.Ticket).WithMany(p => p.Feedbacks)
+                .HasForeignKey(d => d.TicketId)
+                .HasConstraintName("FK_feedback_ticket");
 
             entity.HasOne(d => d.User).WithMany(p => p.Feedbacks)
                 .HasForeignKey(d => d.UserId)
@@ -391,7 +395,7 @@ public partial class TicketResellContext : DbContext
 
         modelBuilder.Entity<Transactions>(entity =>
         {
-            entity.HasKey(e => e.Id).HasName("PK__transact__3213E83F2A3EEC33");
+            entity.HasKey(e => e.Id).HasName("PK__transact__3213E83F562E345D");
 
             entity.ToTable("transactions");
 
@@ -426,17 +430,17 @@ public partial class TicketResellContext : DbContext
             entity.HasOne(d => d.Buyer).WithMany(p => p.TransactionBuyers)
                 .HasForeignKey(d => d.BuyerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__transacti__buyer__1BC821DD");
+                .HasConstraintName("FK__transacti__buyer__245D67DE");
 
             entity.HasOne(d => d.Seller).WithMany(p => p.TransactionSellers)
                 .HasForeignKey(d => d.SellerId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__transacti__selle__1CBC4616");
+                .HasConstraintName("FK__transacti__selle__25518C17");
 
             entity.HasOne(d => d.Ticket).WithMany(p => p.Transactions)
                 .HasForeignKey(d => d.TicketId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__transacti__ticke__1AD3FDA4");
+                .HasConstraintName("FK__transacti__ticke__2645B050");
         });
 
         modelBuilder.Entity<User>(entity =>
@@ -454,22 +458,23 @@ public partial class TicketResellContext : DbContext
             entity.Property(e => e.Email)
                 .HasMaxLength(100)
                 .HasColumnName("email");
+            entity.Property(e => e.IsVerified)
+                .HasColumnType("bit")
+                .HasColumnName("is_verified");
             entity.Property(e => e.Password)
-                .HasMaxLength(30)
-                .IsFixedLength()
+                .HasMaxLength(64)
+                .IsUnicode(false)
                 .HasColumnName("password");
             entity.Property(e => e.Phone)
                 .HasMaxLength(20)
                 .HasColumnName("phone");
             entity.Property(e => e.ReputationPoints).HasColumnName("reputation_points");
-            entity.Property(e => e.IsVerified)
-              .HasColumnName("is_verified")
-              .HasColumnType("tinyint")
-              .HasConversion<int>();
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .HasColumnName("username");
-            entity.Property(e => e.Wallet).HasColumnName("wallet");
+            entity.Property(e => e.Wallet)
+                .HasColumnType("decimal(18, 2)")
+                .HasColumnName("wallet");
         });
 
         modelBuilder.Entity<UserRole>(entity =>

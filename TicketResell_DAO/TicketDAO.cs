@@ -29,7 +29,7 @@ namespace TicketResell_DAO
             }
         }
 
-        public async Task<List<Ticket>> GetAllTickets(Guid? userId)
+        public async Task<List<Ticket>> GetAllTickets()
         {
             return await _context.Tickets
                             .Where(t => t.TicketStatus == "Available" || t.TicketStatus == "Sold")

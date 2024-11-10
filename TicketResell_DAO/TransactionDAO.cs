@@ -90,7 +90,7 @@ namespace TicketResell_DAO
                 return false;
             }
 
-            user.Wallet += (float)amount;
+            user.Wallet += amount;
 
             _context.Users.Update(user);
             await _context.SaveChangesAsync();

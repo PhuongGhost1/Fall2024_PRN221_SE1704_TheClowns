@@ -11,7 +11,8 @@ namespace TicketResell_Service
     public interface IFeedbackService
     {
         Task<List<Feedback>> GetFeedbackByUserIdAsync(Guid userId);
-        Task AddFeedbackAsync(Guid userId, int rating, string comment);
+        Task<bool> AddFeedbackAsync(Feedback feedback);
+        Task<List<Feedback>> GetFeedbacksByTicketIdAsync(Guid ticketId);
     }
     
     public class FeedbackService : IFeedbackService
@@ -22,7 +23,9 @@ namespace TicketResell_Service
             _feedbackRepository = feedbackRepository;
         }
 
-        public async Task AddFeedbackAsync(Guid userId, int rating, string comment) => await _feedbackRepository.AddAsync(new Feedback { UserId = userId, Rating = rating, Comment = comment });
+        public async Task<bool> AddFeedbackAsync(Feedback feedback) => await _feedbackRepository.AddAsync(feedback);
+
+        public async Task<List<Feedback>> GetFeedbacksByTicketIdAsync(Guid ticketId) => await _feedbackRepository.GetFeedbacksByTicketId(ticketId);
 
         public async Task<List<Feedback>> GetFeedbackByUserIdAsync(Guid userId) => await _feedbackRepository.GetByUserIdAsync(userId);
     }

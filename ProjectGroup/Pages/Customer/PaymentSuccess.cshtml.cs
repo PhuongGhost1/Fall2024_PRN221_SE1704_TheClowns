@@ -110,9 +110,11 @@ namespace ProjectGroup.Pages.Customer
                     {
                         totalReputationAdjustment += 5;
                     }
-
+                    
                     user.ReputationPoints += totalReputationAdjustment;
                     await _userService.UpdateUserAsync(user);
+
+                    await _transactionService.GetMoneyWalletFromBuyerAsync(transaction.SellerId, transaction.Amount);
                 }
 
                 var conversation = await _chatService.GetActiveConversationAsync(transaction.BuyerId, transaction.SellerId, transaction.TicketId);

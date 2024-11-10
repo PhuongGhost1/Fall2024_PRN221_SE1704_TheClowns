@@ -140,5 +140,10 @@ namespace TicketResell_DAO
         {
             return await _context.Users.AnyAsync(u => u.Email == email);
         }
+
+        public async Task<List<User>> GetAllUsers()
+        {
+            return await _context.Users.OrderByDescending(u => u.CreatedAt).ToListAsync();
+        }
     }
 }

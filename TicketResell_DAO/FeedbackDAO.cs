@@ -34,15 +34,9 @@ namespace TicketResell_DAO
             return await _context.Feedbacks.Where(f => f.UserId == userId).ToListAsync();
         }
 
-        public async Task<bool> AddFeedbackAsync(Guid? userId, int? rating, string comment)
+        public async Task<bool> AddFeedbackAsync(Feedback feedback)
         {
-            Feedback feedback = new Feedback
-            {
-                UserId = userId,
-                Rating = rating,
-                Comment = comment
-            };
-            _context.Feedbacks.Add(feedback);
+            await _context.Feedbacks.AddAsync(feedback);
             await _context.SaveChangesAsync();
             return true;
         }
@@ -55,6 +49,15 @@ namespace TicketResell_DAO
         public async Task<Feedback> GetFeedbackByIdAsync(Guid id)
         {
             return await _context.Feedbacks.FirstOrDefaultAsync(f => f.Id == id);
+        }
+
+        public async Task<List<Feedback>> GetFeedbacksByTicketId(Guid ticketId)
+        {
+            return await _context.Feedbacks
+                .Where(f => f.TicketId == ticketId)
+                .OrderByDescending(f => f.SubmittedAt)
+                .Take(5)
+                .ToListAsync();
         }
     }
 }

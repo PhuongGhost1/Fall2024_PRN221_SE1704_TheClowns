@@ -12,15 +12,18 @@ namespace TIcketResell_Repository
     {
         Task<Feedback> GetByIdAsync(Guid id);
         Task<List<Feedback>> GetByUserIdAsync(Guid userId);
-        Task AddAsync(Feedback feedback);
+        Task<bool> AddAsync(Feedback feedback);
+        Task<List<Feedback>> GetFeedbacksByTicketId(Guid ticketId);
     }
 
     public class FeedbackRepository : IFeedbackRepository
     {
-        public async Task AddAsync(Feedback feedback) => await FeedbackDAO.getInstance.AddFeedbackAsync(feedback.UserId, feedback.Rating, feedback.Comment);
+        public async Task<bool> AddAsync(Feedback feedback) => await FeedbackDAO.getInstance.AddFeedbackAsync(feedback);
 
         public async Task<Feedback> GetByIdAsync(Guid id) => await FeedbackDAO.getInstance.GetFeedbackByIdAsync(id);
 
         public async Task<List<Feedback>> GetByUserIdAsync(Guid userId) => await FeedbackDAO.getInstance.GetFeedbackByUserIdAsync(userId);
+
+        public async Task<List<Feedback>> GetFeedbacksByTicketId(Guid ticketId) => await FeedbackDAO.getInstance.GetFeedbacksByTicketId(ticketId);
     }
 }

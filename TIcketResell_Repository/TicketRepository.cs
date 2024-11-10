@@ -10,7 +10,7 @@ namespace TIcketResell_Repository
 {
     public interface ITicketRepository
     {
-        Task<List<Ticket>> GetTickets(Guid? userId);
+        Task<List<Ticket>> GetTickets();
         Task<Ticket?> GetByIdAsync(Guid? id);
         Task<List<Ticket>> GetByOwnerIdAsync(Guid? ownerId);
         Task<List<Ticket>> GetByEventTypeAsync(Guid eventTypeId);
@@ -31,7 +31,7 @@ namespace TIcketResell_Repository
 
         public async Task<List<Ticket>> GetByOwnerIdAsync(Guid? ownerId) => await TicketDAO.getInstance.GetTicketsByOwnerID(ownerId);
 
-        public async Task<List<Ticket>> GetTickets(Guid? userId) => await TicketDAO.getInstance.GetAllTickets(userId);
+        public async Task<List<Ticket>> GetTickets() => await TicketDAO.getInstance.GetAllTickets();
 
         public async Task<List<Ticket>> SearchTicketsAsync(string eventName, DateTime? eventDate) => await TicketDAO.getInstance.SearchTickets(eventName, eventDate);
 

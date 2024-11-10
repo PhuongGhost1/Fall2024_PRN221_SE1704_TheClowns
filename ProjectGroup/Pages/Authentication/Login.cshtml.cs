@@ -38,10 +38,12 @@ namespace ProjectGroup.Pages.Authentication
             Guid? roleId = userRole.RoleId;
             Guid? userId = userRole.UserId;
             string userName = user.Username;
+            decimal? balance = user.Wallet;
 
             HttpContext.Session.SetString("RoleId", roleId.ToString());
             HttpContext.Session.SetString("UserId", userId.ToString());
             HttpContext.Session.SetString("UserName", userName);
+            HttpContext.Session.SetString("Balance", balance.ToString());
 
             string redirectUrl = roleId switch
             {

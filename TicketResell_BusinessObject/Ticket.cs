@@ -29,6 +29,8 @@ public partial class Ticket
 
     public virtual EventType? EventType { get; set; }
 
+    public virtual ICollection<Feedback> Feedbacks { get; set; } = new List<Feedback>();
+
     public virtual ICollection<Image> Images { get; set; } = new List<Image>();
 
     public virtual ICollection<Order> Orders { get; set; } = new List<Order>();
