@@ -120,6 +120,7 @@
                             <input type="hidden" name="conversationId" value="@Model.CurrentConversation?.Id" />
                             <input type="hidden" name="buyerId" value="@Model.CurrentConversation?.BuyerId" />
                             <input type="hidden" name="sellerId" value="@Model.CurrentConversation?.SellerId" />
+                            <input type="hidden" name="ticketId" value="@Model.CurrentConversation?.TicketId" />
                             <input type="text" name="messageContent" class="form-control" placeholder="Type a message..." required />
                             <button type="submit" class="btn btn-primary ms-2">Send</button>
                         </form>

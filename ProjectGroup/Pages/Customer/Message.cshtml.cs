@@ -79,7 +79,7 @@ namespace ProjectGroup.Pages.Customer
             return Page();
         }
 
-        public async Task<IActionResult> OnPostSendMessageAsync(Guid conversationId, Guid? buyerId, Guid? sellerId, string messageContent)
+        public async Task<IActionResult> OnPostSendMessageAsync(Guid conversationId, Guid? buyerId, Guid? sellerId, Guid? ticketId, string messageContent)
         {
             var currentUserId = UserId;
 
@@ -113,10 +113,8 @@ namespace ProjectGroup.Pages.Customer
                 };
 
                 await _chatService.SendMessageAsync(chat);
-
-                await _notificationService.AddNotificationAsync(BuyerId ?? SellerId, messageContent);
             }
-            return RedirectToPage(new { conversationId = conversationId });
+            return Redirect($"http://localhost:5157/Customer/Message?buyerId={buyerId}&sellerId={sellerId}&ticketId={ticketId}");
         }
 
         public async Task<IActionResult> OnPostCreateTransactionAsync(Guid conversationId, Guid buyerId, Guid sellerId, Guid ticketId)
