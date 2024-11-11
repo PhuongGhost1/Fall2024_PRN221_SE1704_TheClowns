@@ -116,6 +116,7 @@ namespace TicketResell_DAO
             return await _context.Tickets
                 .Include(t => t.Owner)
                 .Include(t => t.EventType)
+                .Include(t => t.Images)
                 .OrderBy(t => t.TicketStatus != "Pending")
                 .ThenBy(t => t.TicketStatus)
                 .ToListAsync();
