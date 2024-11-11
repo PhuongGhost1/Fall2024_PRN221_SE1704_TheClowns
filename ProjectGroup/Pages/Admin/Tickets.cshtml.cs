@@ -1,16 +1,22 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using TicketResell_BusinessObject;
+using TicketResell_Service;
 
 namespace ProjectGroup.Pages.Admin
 {
     public class TicketsModel : PageModel
     {
         private readonly IHttpContextAccessor _httpContextAccessor;
-        public TicketsModel(IHttpContextAccessor httpContextAccessor)
+        private readonly ITicketService _ticketService;
+        public TicketsModel(IHttpContextAccessor httpContextAccessor, ITicketService ticketService)
         {
             _httpContextAccessor = httpContextAccessor;
+            _ticketService = ticketService;
         }
-        public IActionResult OnGet()
+        [BindProperty]
+        public List<Ticket> Tickets { get; set; }
+        public async Task<IActionResult> OnGet()
         {
             string username = _httpContextAccessor.HttpContext.Session.GetString("UserName");
             string roleIdString = _httpContextAccessor.HttpContext.Session.GetString("RoleId");
@@ -28,6 +34,15 @@ namespace ProjectGroup.Pages.Admin
                 return RedirectToPage("/Authentication/Login");
             }
 
+            Tickets = await _ticketService.GetTicketPending();
+
+            return Page();
+        }
+
+        public async Task<IActionResult> OnPostAsync(Guid ticketId, string action)
+        {
+            await _ticketService.TicketStatusUpdate(ticketId, action);
+            Tickets = await _ticketService.GetTicketPending();
             return Page();
         }
     }

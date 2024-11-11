@@ -20,8 +20,9 @@ namespace TicketResell_DAO
 
         public static TicketDAO getInstance
         {
-            get{ 
-                if(_instance == null)
+            get
+            {
+                if (_instance == null)
                 {
                     _instance = new TicketDAO();
                 }
@@ -98,13 +99,30 @@ namespace TicketResell_DAO
         public async Task<bool> DeleteTicket(Guid ticketID)
         {
             var ticket = await _context.Tickets.FindAsync(ticketID);
-            if(ticket == null)
+            if (ticket == null)
             {
                 return false;
             }
             _context.Tickets.Remove(ticket);
             await _context.SaveChangesAsync();
             return true;
-        }      
+        }
+        public async Task<List<Ticket>> GetTicketPending()
+        {
+            return await _context.Tickets
+                .Include(t => t.Owner)
+                .Include(t => t.EventType)
+                .OrderBy(t => t.TicketStatus != "Pending")
+                .ThenBy(t => t.TicketStatus)
+                .ToListAsync();
+        }
+
+        public async Task<bool> TicketStatusUpdate(Guid ticketId, string Status)
+        {
+            Ticket ticket = await _context.Tickets.FirstOrDefaultAsync(t => t.Id == ticketId);
+            ticket.TicketStatus = Status;
+            _context.Tickets.Update(ticket);
+            return await _context.SaveChangesAsync() > 0;
+        }
     }
 }

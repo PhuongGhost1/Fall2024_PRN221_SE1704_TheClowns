@@ -56,8 +56,8 @@ namespace TicketResell_Service
                 transaction.BuyerId = userId;
             }
 
-            transaction.Amount = amount;    
-            transaction.TransactionDate = DateTime.Now;   
+            transaction.Amount = amount;
+            transaction.TransactionDate = DateTime.Now;
             transaction.TransactionStatus = "Depoiste";
             return await _transactionRepository.AddAsync(transaction);
         }
@@ -73,7 +73,7 @@ namespace TicketResell_Service
                 Amount = amount,
                 TransactionStatus = "Pending",
                 TransactionDate = DateTime.UtcNow < new DateTime(1753, 1, 1) ? new DateTime(1753, 1, 1) : DateTime.UtcNow,
-                TypeTransaction = "Paypal"              
+                TypeTransaction = "Paypal"
             };
 
             var success = await _transactionRepository.AddAsync(transaction);

@@ -5,8 +5,139 @@
     ViewData["Title"] = "Tickets Management";
 }
 
-<div class="content">
-    <p>Tickets</p>
+<div id="ticket-mng-page">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Username</th>
+                <th>Event Name</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            @{
+                int count = 1;
+            }
+            @foreach (var ticket in Model.Tickets)
+            {
+                <tr>
+                    <td>@count</td>
+                    <td>@ticket.Owner.Username</td>
+                    <td>@ticket.EventName</td>
+                    <td>@ticket.Price</td>
+                    <td>@ticket.TicketStatus</td>
+                    <td>
+                        <button class="btn btn-outline-info" style="font-weight: 600;" type="submit" data-bs-toggle="modal"
+                            data-bs-target="#popup-info-@count">
+                            View Detail
+                        </button>
+                    </td>
+                </tr>
+                <div class="modal fade" id="popup-info-@count" data-bs-backdrop="static" data-bs-keyboard="false"
+                    tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Ticket Info</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            @if (Model.Tickets != null && Model.Tickets.Count > count - 1)
+                            {
+                                var ticketDetail = Model.Tickets[count - 1];
+                                <div class="modal-body">
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Username" value="@ticketDetail.Owner.Username" readonly>
+                                            <label for="floatingInputGroup1">Username</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Event Name" value="@ticketDetail.EventName" readonly>
+                                            <label for="floatingInputGroup1">Event Name</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Event Type" value="@ticketDetail.EventType.Name" readonly>
+                                            <label for="floatingInputGroup1">Event Type</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="datetime" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Event Date" value="@ticketDetail.EventDate" readonly>
+                                            <label for="floatingInputGroup1">Event Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Price"
+                                                value="@ticketDetail.Price" readonly>
+                                            <label for="floatingInputGroup1">Price</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="datetime" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Expiration Date" value="@ticketDetail.ExpirationDate" readonly>
+                                            <label for="floatingInputGroup1">Expiration Date</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Serial" value="@ticketDetail.Serial" readonly>
+                                            <label for="floatingInputGroup1">Serial</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <span class="input-group-text"></span>
+                                        <div class="form-floating">
+                                            <input type="text" class="form-control" id="floatingInputGroup1"
+                                                placeholder="Status" value="@ticketDetail.TicketStatus" readonly>
+                                            <label for="floatingInputGroup1">Status</label>
+                                        </div>
+                                    </div>
+                                </div>
+                                @if (@ticketDetail.TicketStatus == "Pending")
+                                {
+                                    <div class="modal-footer">
+                                        <form method="post">
+                                            <input type="hidden" name="ticketId" value="@ticket.Id" />
+                                            <button type="submit" class="btn btn-danger" name="action" value="Unavailable"
+                                                data-bs-dismiss="modal">Reject</button>
+                                            <button type="submit" class="btn btn-success" name="action" value="Available"
+                                                data-bs-dismiss="modal">Accept</button>
+                                        </form>
+                                    </div>
+                                }
+                            }
+                        </div>
+                    </div>
+                </div>
+                count++;
+            }
+        </tbody>
+    </table>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script>
+        function()
+    </script>
 </div>

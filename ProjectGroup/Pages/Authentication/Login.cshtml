@@ -10,7 +10,8 @@
         <form method="post">
             <div class="mb-3">
                 <label for="txtUsername" class="form-label">Username</label>
-                <input name="txtUsername" type="text" class="form-control" id="txtUsername" placeholder="Enter your username" required>
+                <input name="txtUsername" type="text" class="form-control" id="txtUsername"
+                    placeholder="Enter your email" required>
             </div>
             @if (TempData["ErrorMessage"] != null)
             {
@@ -18,7 +19,8 @@
             }
             <div class="mb-3">
                 <label for="txtPwd" class="form-label">Password</label>
-                <input name="txtPwd" type="password" class="form-control" id="txtPwd" placeholder="Enter your password" required>
+                <input name="txtPwd" type="password" class="form-control" id="txtPwd" placeholder="Enter your password"
+                    required>
             </div>
             @if (TempData["ErrorMessage"] != null)
             {

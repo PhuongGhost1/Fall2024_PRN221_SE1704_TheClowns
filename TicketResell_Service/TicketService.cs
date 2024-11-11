@@ -18,13 +18,15 @@ namespace TicketResell_Service
         Task<bool> AddTicketAsync(Ticket ticket);
         Task<bool> UpdateTicketAsync(Ticket ticket);
         Task<bool> DeleteTicketAsync(Guid id);
+        Task<List<Ticket>> GetTicketPending();
+        Task<bool> TicketStatusUpdate(Guid ticketId, string Status);
     }
     public class TicketService : ITicketService
     {
         private ITicketRepository _ticketRepository;
         public TicketService(ITicketRepository ticketRepository)
         {
-            _ticketRepository = ticketRepository;   
+            _ticketRepository = ticketRepository;
         }
 
         public async Task<bool> AddTicketAsync(Ticket ticket) => await _ticketRepository.AddAsync(ticket);
@@ -35,6 +37,8 @@ namespace TicketResell_Service
 
         public async Task<Ticket?> GetTicketByIdAsync(Guid? id) => await _ticketRepository.GetByIdAsync(id);
 
+        public async Task<List<Ticket>> GetTicketPending() => await _ticketRepository.GetTicketPending();
+
         public async Task<List<Ticket>> GetTicketsAsync() => await _ticketRepository.GetTickets();
 
         public async Task<List<Ticket>> GetTicketsByOwnerIdAsync(Guid? ownerId) => await _ticketRepository.GetByOwnerIdAsync(ownerId);
@@ -43,5 +47,6 @@ namespace TicketResell_Service
 
         public async Task<bool> UpdateTicketAsync(Ticket ticket) => await _ticketRepository.UpdateTicketStatus(ticket);
 
+        public async Task<bool> TicketStatusUpdate(Guid ticketId, string Status) => await _ticketRepository.TicketStatusUpdate(ticketId, Status);
     }
 }
