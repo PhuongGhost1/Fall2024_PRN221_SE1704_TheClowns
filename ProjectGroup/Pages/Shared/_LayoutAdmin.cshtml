@@ -1,6 +1,7 @@
 ﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <title>@ViewData["Title"]</title>
 </head>
+
 <body>
     <div class="d-flex">
         @{
@@ -15,54 +17,61 @@
             String RoleIdString = HttpContextAccessor.HttpContext.Session.GetString("RoleId");
             Guid? RoleId = string.IsNullOrEmpty(RoleIdString) ? (Guid?)null : Guid.Parse(RoleIdString);
 
-        <nav class="sidebar flex-shrink-0 p-3">
+            <nav class="sidebar flex-shrink-0 p-3">
 
-            <ul class="nav flex-column">
-                @if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483"))
-                {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Dashboard"><i class="fas fa-dashboard"></i> Dashboard</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Users"><i class="fas fa-users"></i> Users Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Settings"><i class="fas fa-cog"></i> Settings</a>
-                    </li>
-                }
-                else if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A"))
-                {
+                <ul class="nav flex-column">
+                    @if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId ==
+                Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483"))
+                    {
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Dashboard"><i class="fas fa-dashboard"></i> Dashboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Users"><i class="fas fa-users"></i> Users Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Settings"><i class="fas fa-cog"></i> Settings</a>
+                        </li>
+                    }
+                    else if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId ==
+                    Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A"))
+                    {
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Admin/Dashboard"><i class="fas fa-dashboard"></i> Dashboard</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Admin/Users"><i class="fas fa-user-alt"></i> User Management</a>
-                        </li>                   
-                        <li class="nav-item">
-                            <a class="nav-link" asp-page="/Staff/Tickets"><i class="fas fa-ticket-alt"></i> Tickets Management</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/Admin/Events"><i class="fas fa-calendar-alt"></i> Events Management</a>
-                        </li>                                          
+                            <a class="nav-link" asp-page="/Admin/Tickets"><i class="fas fa-ticket-alt"></i> Tickets
+                                Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Events"><i class="fas fa-calendar-alt"></i> Events
+                                Management</a>
+                        </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Admin/Reports"><i class="fas fa-chart-line"></i> Reports</a>
                         </li>
-                       
-                }              
-            </ul>
-        </nav>
 
-        <div class="content flex-grow-1 p-4">
-            <header class="d-flex justify-content-between align-items-center mb-3">
-                <h1>@ViewData["Title"]</h1>
-                <div class="user-dropdown">
-                    
+                    }
+                </ul>
+            </nav>
 
-                        @if (!string.IsNullOrEmpty(Username) && RoleId != null && (RoleId == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483") || RoleId == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A")))
+            <div class="content flex-grow-1 p-4">
+                <header class="d-flex justify-content-between align-items-center mb-3">
+                    <h1>@ViewData["Title"]</h1>
+                    <div class="user-dropdown">
+
+
+                        @if (!string.IsNullOrEmpty(Username) && RoleId != null && (RoleId ==
+                    Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483") || RoleId ==
+                    Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A")))
                         {
                             <div class="dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-bs-toggle="dropdown" aria-expanded="false">
                                     Hello, @Username!
                                 </a>
                                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
@@ -86,16 +95,17 @@
                             <a class="nav-link text-dark" asp-area="" asp-page="/Authentication/Login">Login</a>
                             <a class="nav-link text-dark" asp-area="" asp-page="/Authentication/Register">Sign up</a>
                         }
-                    
-                </div>
-            </header>
 
-            @RenderBody()
-        </div>
+                    </div>
+                </header>
+
+                @RenderBody()
+            </div>
         }
     </div>
 
     <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
