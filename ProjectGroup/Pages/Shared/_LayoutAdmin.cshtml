@@ -33,15 +33,23 @@
                 }
                 else if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A"))
                 {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Tickets"><i class="fas fa-ticket-alt"></i> Tickets Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Events"><i class="fas fa-calendar-alt"></i> Events Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Reports"><i class="fas fa-chart-line"></i> Reports</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Dashboard"><i class="fas fa-dashboard"></i> Dashboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Users"><i class="fas fa-user-alt"></i> User Management</a>
+                        </li>                   
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Staff/Tickets"><i class="fas fa-ticket-alt"></i> Tickets Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Events"><i class="fas fa-calendar-alt"></i> Events Management</a>
+                        </li>                                          
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Reports"><i class="fas fa-chart-line"></i> Reports</a>
+                        </li>
+                       
                 }              
             </ul>
         </nav>
