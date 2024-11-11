@@ -1,0 +1,32 @@
+﻿@page
+@model ProjectGroup.Pages.Authentication.LoginModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="bg-light d-flex align-items-center justify-content-center" style="height: 550px;">
+    <div class="container col-md-4 bg-white shadow p-5 rounded">
+        <h1 class="display-5 text-center mb-4">Login</h1>
+        <form method="post">
+            <div class="mb-3">
+                <label for="txtUsername" class="form-label">Username</label>
+                <input name="txtUsername" type="text" class="form-control" id="txtUsername" placeholder="Enter your username" required>
+            </div>
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+            }
+            <div class="mb-3">
+                <label for="txtPwd" class="form-label">Password</label>
+                <input name="txtPwd" type="password" class="form-control" id="txtPwd" placeholder="Enter your password" required>
+            </div>
+            @if (TempData["ErrorMessage"] != null)
+            {
+                <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
+            }
+            <div class="d-flex justify-content-between mt-4">
+                <input type="submit" class="btn btn-primary w-45" value="Login" name="btnLogin" />
+            </div>
+        </form>
+    </div>
+</div>

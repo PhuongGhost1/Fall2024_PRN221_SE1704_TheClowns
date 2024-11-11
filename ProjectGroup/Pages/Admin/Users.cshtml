@@ -1,0 +1,79 @@
+﻿@page
+@model ProjectGroup.Pages.Admin.UsersModel
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Users Management";
+}
+
+<input type="text" id="searchInput" placeholder="Search by name, email, or status" class="form-control mb-3" onkeyup="filterUsers()">
+
+
+
+<script>
+    function filterUsers() {
+        const filter = document.getElementById("searchInput").value.toUpperCase();
+        const rows = document.querySelectorAll("tbody tr");
+        rows.forEach(row => {
+            const cells = row.querySelectorAll("td");
+            const matches = Array.from(cells).some(cell => cell.textContent.toUpperCase().includes(filter));
+            row.style.display = matches ? "" : "none";
+        });
+    }
+</script>
+
+<div class="container mt-4">
+    <table class="table table-bordered">
+        <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Email</th>
+                <th>Created Date</th>
+                <th>Reputation Points</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.Users)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.Username</td>
+                    <td>@user.Phone</td>
+                    <td>@user.Email</td>
+                    <td>@user.CreatedAt?.ToString("yyyy-MM-dd")</td>
+                    <td>@user.ReputationPoints</td>
+                    <td>
+                        <span class="badge @(user.Status == "Blocked" ? "bg-danger" : "bg-success")">
+                            @(user.Status == "Blocked" ? "Blocked" : "Active")
+                        </span>
+                    </td>
+                    <td>
+                        <form method="post" asp-page-handler="ToggleStatus" asp-route-userId="@user.Id" onsubmit="return confirmToggleStatus('@user.Status')">
+                            <button type="submit" class="btn @(user.Status == "Blocked" ? "btn-success" : "btn-danger")">
+                                @(user.Status == "Blocked" ? "Unblock" : "Block")
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+<script>
+    
+    function confirmToggleStatus(currentStatus) {
+        const action = currentStatus === "Blocked" ? "unblock" : "block";
+        return confirm(`Are you sure you want to ${action} this user?`);
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+        displayTableRows();
+    });
+</script>
+
+
+

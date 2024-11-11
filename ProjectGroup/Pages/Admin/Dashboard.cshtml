@@ -1,0 +1,97 @@
+﻿@page
+@model ProjectGroup.Pages.Admin.DashboardModel
+@{
+    Layout = "_LayoutAdmin";
+    ViewData["Title"] = "Admin Dashboard";
+}
+
+<div class="container-fluid">
+    <div class="row">
+        <main class="col-12 px-md-4">
+            <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+                <h1 class="h2">Dashboard</h1>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white" style="background-color: #4e73df;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Tickets</h5>
+                            <p class="card-text">@Model.CountTicket</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white" style="background-color: #1cc88a;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Users</h5>
+                            <p class="card-text">@Model.CountUser</p>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white" style="background-color: #36b9cc;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Transactions</h5>
+                            <p class="card-text">@Model.Transaction</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4 mb-4">
+                    <div class="card text-white" style="background-color: #f6c23e;">
+                        <div class="card-body">
+                            <h5 class="card-title">Total Revenue</h5>
+                            <p class="card-text">@Model.TotalRevenue.ToString("C")</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header" style="background-color: #4e73df; color: white;">
+                    Ticket Sales Chart
+                </div>
+                <div class="card-body">
+                    <canvas id="ticketSalesChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    const lastSixMonths = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.LastSixMonths));
+    const data = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model.RecentTransactions));
+
+    const ctx = document.getElementById('ticketSalesChart').getContext('2d');
+    const ticketSalesChart = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: lastSixMonths,
+            datasets: [{
+                label: 'Tickets Sold',
+                data: data,
+                backgroundColor: 'rgba(54, 162, 235, 0.5)',
+                borderColor: 'rgba(54, 162, 235, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+</script>

@@ -32,7 +32,304 @@
         "frameworks": {
           "net8.0": {
             "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+              },
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.VisualStudio.Web.CodeGeneration.Design": {
+              "target": "Package",
+              "version": "[8.0.6, )"
+            },
+            "PayPal": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
+            "PayPalCoreSDK": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+        "projectName": "TicketResell_BusinessObject",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+        "projectName": "TicketResell_DAO",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "Microsoft.Data.SqlClient": {
+              "target": "Package",
+              "version": "[5.2.2, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[8.0.10, )"
+            },
+            "Microsoft.Extensions.Configuration": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[8.0.0, )"
+            },
+            "Microsoft.Extensions.Configuration.FileExtensions": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[8.0.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+        "projectName": "TIcketResell_Repository",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj"
+              }
+            }
           }
         },
         "warningProperties": {
@@ -61,9 +358,93 @@
           "assetTargetFallback": true,
           "warn": true,
           "frameworkReferences": {
-            "Microsoft.AspNetCore.App": {
-              "privateAssets": "none"
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+        "projectName": "TicketResell_Service",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net8.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net8.0": {
+            "targetAlias": "net8.0",
+            "projectReferences": {
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net8.0": {
+          "targetAlias": "net8.0",
+          "dependencies": {
+            "MailKit": {
+              "target": "Package",
+              "version": "[4.8.0, )"
             },
+            "Microsoft.AspNetCore.Mvc": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "PayPal": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
+            "PayPalCoreSDK": {
+              "target": "Package",
+              "version": "[1.7.1, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
