@@ -1,47 +1,131 @@
 is_global = true
 build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
 build_property.TargetPlatformMinVersion = 
 build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
 build_property.ProjectTypeGuids = 
 build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
 build_property.PlatformNeutralAssembly = 
 build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectGroup
 build_property.RootNamespace = ProjectGroup
-build_property.ProjectDir = C:\Users\ibaxq\Desktop\FPTU\Semester7\PRN221\Fall2024_PRN221_SE1704_TheClowns\ProjectGroup\
+build_property.ProjectDir = D:\University\kì 7(5.9.2024)\PRN221\Storage\ProjectGroup\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\ibaxq\Desktop\FPTU\Semester7\PRN221\Fall2024_PRN221_SE1704_TheClowns\ProjectGroup
+build_property.MSBuildProjectDirectory = D:\University\kì 7(5.9.2024)\PRN221\Storage\ProjectGroup
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Error.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Admin/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Admin/Events.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRXZlbnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Admin/Reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cUmVwb3J0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Admin/Settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cU2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Admin/Tickets.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVGlja2V0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Admin/Users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cRm9yZ290UGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/Logout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cTG9nb3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Authentication/Register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQXV0aGVudGljYXRpb25cUmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/EditTicket.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcRWRpdFRpY2tldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/Message.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcTWVzc2FnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/Notifications.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcTm90aWZpY2F0aW9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/PaymentCancel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcUGF5bWVudENhbmNlbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/PaymentSuccess.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcUGF5bWVudFN1Y2Nlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcUHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Customer/UpPost.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQ3VzdG9tZXJcVXBQb3N0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Index.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Privacy.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/_ViewImports.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/TicketsPage/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGlja2V0c1BhZ2VcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/_ViewStart.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/ibaxq/Desktop/FPTU/Semester7/PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Shared/_Layout.cshtml]
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-uid17s0mm4
+
+[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Shared/_LayoutAdmin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRBZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = b-hghjjdy6fu

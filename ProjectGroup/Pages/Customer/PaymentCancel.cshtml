@@ -1,0 +1,29 @@
+﻿@page
+@model ProjectGroup.Pages.Customer.PaymentCancelModel
+@{
+    ViewData["Title"] = "Cancel Payment";
+}
+
+<div class="container">
+    @if (TempData["SuccessMessage"] != null)
+    {
+        <div class="alert alert-success text-center">
+            @TempData["SuccessMessage"]
+        </div>
+    }
+
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger text-center">
+            @TempData["Error"]
+        </div>
+    }
+
+    <div class="message-box alert alert-danger">
+        <h2 class="text-center">Thanh toán bị hủy!</h2>
+        <p class="text-center">Rất tiếc, thanh toán của bạn đã bị hủy. Vui lòng thử lại sau hoặc liên hệ với chúng tôi nếu bạn gặp vấn đề.</p>
+        <div class="text-center">
+            <a href="/Customer/Message" class="btn btn-custom btn-lg">Quay lại trang nhắn tin</a>
+        </div>
+    </div>
+</div>

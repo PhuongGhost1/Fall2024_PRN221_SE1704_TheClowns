@@ -1,0 +1,51 @@
+﻿@page
+@model ProjectGroup.Pages.Customer.NotificationsModel
+@{
+    ViewData["Title"] = "All Notifications";
+}
+
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card">
+                <div class="card-header bg-primary text-white">Notifications</div>
+                <div class="list-group list-group-flush">
+                         
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <div class="card">
+                <div class="card-header bg-secondary text-white">
+                    <span>
+                            
+                    </span>
+                </div>
+
+                <div class="card-body">
+                    @if (Model.Notifications != null && Model.Notifications.Any())
+                    {
+                        <div class="chat-messages">
+                            @foreach (var notifications in Model.Notifications)
+                            {
+                                  <div class="d-flex mb-2">
+                                    <div class="p-2 rounded">
+                                        @notifications.Message
+                                        <small class="d-block">
+                                            @notifications.SentAt?.ToString("dd:MM:yyyy hh:mm tt")
+                                        </small>
+                                    </div>
+                                </div>
+                            }
+                        </div>
+                    }
+                    else
+                    {
+                        <p class="text-muted">No messages selected.</p>
+                    }
+                </div>               
+            </div>
+        </div>
+    </div>
+</div>
