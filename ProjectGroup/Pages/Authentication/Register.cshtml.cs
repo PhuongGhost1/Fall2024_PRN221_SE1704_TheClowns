@@ -74,7 +74,7 @@ namespace ProjectGroup.Pages.Authentication
             {
                 TempData["ErrorMessage"] = "Register Failed! Please try again!!!";
                 return Page();
-            }            
+            }
         }
 
         public async Task<IActionResult> OnPostAsync()
@@ -103,7 +103,7 @@ namespace ProjectGroup.Pages.Authentication
             {
                 var token = SecurityHelper.GenerateVerificationToken(Input.Email, _configuration["JwtSettings:SecretKey"]);
 
-                var htmlBody = $"<h3>Click the link below to verify your email address:</h3><a href=\"https://localhost:7128/Authentication/Register?token={token}\">Verify Email</a>";
+                var htmlBody = $"<h3>Click the link below to verify your email address:</h3><a href=\"http://localhost:5157/Authentication/Register?token={token}\">Verify Email</a>";
 
                 var isSending = await _emailService.SendVerificationEmail(Input.Email, token, "Email Verification", htmlBody);
                 if (isSending)
@@ -121,7 +121,7 @@ namespace ProjectGroup.Pages.Authentication
             {
                 TempData["ErrorMessage"] = "Cannot registered. Please try again.";
                 return Page();
-            }     
+            }
         }
     }
 }

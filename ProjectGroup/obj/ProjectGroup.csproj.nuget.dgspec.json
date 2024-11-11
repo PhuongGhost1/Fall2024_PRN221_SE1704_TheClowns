@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj": {}
+    "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {}
   },
   "projects": {
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj": {
+    "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
+        "projectUniqueName": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
         "projectName": "ProjectGroup",
-        "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\obj\\",
+        "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -29,11 +29,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
-                "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+              "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+                "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
               },
-              "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj": {
-                "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj"
+              "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
+                "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj"
               }
             }
           }
@@ -99,17 +99,17 @@
         }
       }
     },
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+    "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+        "projectUniqueName": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
         "projectName": "TicketResell_BusinessObject",
-        "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\obj\\",
+        "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -182,17 +182,17 @@
         }
       }
     },
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TicketResell_DAO.csproj": {
+    "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TicketResell_DAO.csproj",
+        "projectUniqueName": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
         "projectName": "TicketResell_DAO",
-        "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TicketResell_DAO.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\obj\\",
+        "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -207,8 +207,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
-                "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+              "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+                "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
               }
             }
           }
@@ -285,17 +285,17 @@
         }
       }
     },
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
+    "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+        "projectUniqueName": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
         "projectName": "TIcketResell_Repository",
-        "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\obj\\",
+        "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -310,8 +310,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TicketResell_DAO.csproj": {
-                "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\TicketResell_DAO.csproj"
+              "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
+                "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj"
               }
             }
           }
@@ -350,17 +350,17 @@
         }
       }
     },
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj": {
+    "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj",
+        "projectUniqueName": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
         "projectName": "TicketResell_Service",
-        "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\obj\\",
+        "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+        "packagesPath": "C:\\Users\\nguye\\.nuget\\packages\\",
+        "outputPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\nguye\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -375,8 +375,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
-                "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\TIcketResell_Repository.csproj"
+              "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
+                "projectPath": "D:\\FPT\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj"
               }
             }
           }
