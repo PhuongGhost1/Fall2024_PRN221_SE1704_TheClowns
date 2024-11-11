@@ -13,12 +13,10 @@
                 <input name="txtUsername" type="text" class="form-control" id="txtUsername"
                     placeholder="Enter your email" required>
             </div>
-            @if (TempData["ErrorMessage"] != null)
-            {
-                <div class="alert alert-danger">@TempData["ErrorMessage"]</div>
-            }
             <div class="mb-3">
                 <label for="txtPwd" class="form-label">Password</label>
+                <input name="txtPwd" type="password" class="form-control" id="txtPwd" placeholder="Enter your password"
+                    required>
                 <input name="txtPwd" type="password" class="form-control" id="txtPwd" placeholder="Enter your password"
                     required>
             </div>

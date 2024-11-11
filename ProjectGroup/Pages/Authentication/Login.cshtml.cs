@@ -23,7 +23,11 @@ namespace ProjectGroup.Pages.Authentication
             string password = Request.Form["txtPwd"];
 
             var user = await _userService.GetUserByEmailAsync(email);
-            if (user == null) return Redirect("/Error");
+            if (user == null)
+            {
+                TempData["ErrorMessage"] = "Email or Password is wrong!";
+                return RedirectToPage("/Authentication/Login");
+            }
 
             string hashedPassword = SecurityHelper.HashPassword(password);
             if (!hashedPassword.Equals(user.Password.Trim()))
