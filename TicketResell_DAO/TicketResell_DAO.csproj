@@ -25,7 +25,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TicketResell_BusinessObject\TicketResell_BusinessObject.csproj" />
-    <ProjectReference Include="..\TicketResell_Service\TicketResell_Service.csproj" />
   </ItemGroup>
 
 </Project>

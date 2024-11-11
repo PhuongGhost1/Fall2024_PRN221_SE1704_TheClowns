@@ -13991,19 +13991,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\ASUS\\.nuget\\packages\\": {}
+    "C:\\Users\\Asus\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+      "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
       "projectName": "ProjectGroup",
-      "projectPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
-      "packagesPath": "C:\\Users\\ASUS\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\obj\\",
+      "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
+      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
+      "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\ASUS\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -14018,11 +14018,11 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
-              "projectPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+            "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+              "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
             },
-            "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
-              "projectPath": "C:\\Users\\ASUS\\OneDrive\\Máy tính\\New folder\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj"
+            "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj": {
+              "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\TicketResell_Service.csproj"
             }
           }
         }
@@ -14084,7 +14084,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
       }
     }
   },

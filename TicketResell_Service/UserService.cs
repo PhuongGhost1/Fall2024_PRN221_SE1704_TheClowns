@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TicketResell_BusinessObject;
 using TIcketResell_Repository;
+using TicketResell_Service.Utilities;
 
 namespace TicketResell_Service
 {
@@ -84,12 +86,26 @@ namespace TicketResell_Service
             return flag;
         }
 
-        public async Task<bool> SaveNewPassword(Guid userId, string newPassword) => await _userRepository.SaveNewPassword(userId, newPassword);
+        public async Task<bool> SaveNewPassword(Guid userId, string newPassword)
+        {
+            var user = await _userRepository.GetByIdAsync(userId);
+            if (user == null) return false;
+
+            user.Password = SecurityHelper.HashPassword(newPassword);
+            await _userRepository.UpdateAsync(user);
+            return true;
+        }
 
         public async Task<bool> UpdateReputationPointsAsync(Guid userId, int points) => await _userRepository.UpdateReputationPointsAsync(userId, points);
 
         public async Task<bool> UpdateUserAsync(User user) => await _userRepository.UpdateAsync(user);
 
-        public async Task<bool> ValidatePasswordAsync(Guid userId, string currentPassword) => await _userRepository.ValidatePassword(userId, currentPassword);
+        public async Task<bool> ValidatePasswordAsync(Guid userId, string currentPassword)
+        {
+            var user = await _userRepository.GetByIdAsync(userId);
+            if (user == null) return false;
+
+            return user.Password == SecurityHelper.HashPassword(currentPassword);
+        }
     }
 }

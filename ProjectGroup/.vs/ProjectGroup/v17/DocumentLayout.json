@@ -3,6 +3,19 @@
   "WorkspaceRootPath": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DC6C737E-E2E2-4EAD-8FB2-EC59794C3D11}|..\\TicketResell_DAO\\TicketResell_DAO.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FE3DAC5F-863C-4B34-AAA5-33F92196BBDB}|..\\TIcketResell_Repository\\TIcketResell_Repository.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_repository\\userrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8C7DC98-C4C0-4953-B137-3FAF3DD9DC5C}|..\\TicketResell_Service\\TicketResell_Service.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\ticketresell_service\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\profile.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\profile.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|d:\\university\\k\u00EC 7(5.9.2024)\\prn221\\storage\\projectgroup\\pages\\customer\\message.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{7C9A9354-9746-4097-98A7-B05999C010E0}|ProjectGroup.csproj|solutionrelative:pages\\customer\\message.cshtml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +35,63 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "UserRepository.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\UserRepository.cs",
+              "RelativeDocumentMoniker": "..\\TIcketResell_Repository\\UserRepository.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TIcketResell_Repository\\UserRepository.cs",
+              "RelativeToolTip": "..\\TIcketResell_Repository\\UserRepository.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAA2wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T13:23:34.662Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Profile.cshtml.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Profile.cshtml.cs",
+              "RelativeDocumentMoniker": "Pages\\Customer\\Profile.cshtml.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Profile.cshtml.cs",
+              "RelativeToolTip": "Pages\\Customer\\Profile.cshtml.cs",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAYwGkAAABSAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T13:18:10.38Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\UserService.cs",
+              "RelativeDocumentMoniker": "..\\TicketResell_Service\\UserService.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_Service\\UserService.cs",
+              "RelativeToolTip": "..\\TicketResell_Service\\UserService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAowGwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T11:36:59.645Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserDAO.cs",
+              "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\UserDAO.cs",
+              "RelativeDocumentMoniker": "..\\TicketResell_DAO\\UserDAO.cs",
+              "ToolTip": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\TicketResell_DAO\\UserDAO.cs",
+              "RelativeToolTip": "..\\TicketResell_DAO\\UserDAO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIIAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-11T11:36:32.778Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "appsettings.json",
               "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
@@ -34,12 +99,11 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-11T05:37:25.292Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T05:37:25.292Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 6,
               "Title": "Message.cshtml",
               "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml",
               "RelativeDocumentMoniker": "Pages\\Customer\\Message.cshtml",
@@ -47,12 +111,11 @@
               "RelativeToolTip": "Pages\\Customer\\Message.cshtml",
               "ViewState": "AgIAADMAAAAAAAAAAAAAAIsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T03:19:45.765Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T03:19:45.765Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
               "Title": "Message.cshtml.cs",
               "DocumentMoniker": "D:\\University\\k\u00EC 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\Pages\\Customer\\Message.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Customer\\Message.cshtml.cs",
