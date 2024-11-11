@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using TicketResell_BusinessObject;
 using TIcketResell_Repository;
+using static TicketResell_DAO.TicketDAO;
 
 namespace TicketResell_Service
 {
         public interface ITicketService
         {
-                Task<List<Ticket>> GetTicketsAsync();
+                Task<TicketPagination> GetTicketsAsync(string? query, Guid? eventTypeId, int currentPage, int pageSize);
                 Task<Ticket?> GetTicketByIdAsync(Guid? id);
                 Task<List<Ticket>> GetTicketsByOwnerIdAsync(Guid? ownerId);
                 Task<List<Ticket>> GetByEventTypeAsync(Guid eventTypeId);
@@ -42,7 +43,7 @@ namespace TicketResell_Service
 
                 public async Task<int> GetTicketCountAsync() => await _ticketRepository.CountAsync();
 
-                public async Task<List<Ticket>> GetTicketsAsync() => await _ticketRepository.GetTickets();
+                public async Task<TicketPagination> GetTicketsAsync(string? query, Guid? eventTypeId, int currentPage, int pageSize) => await _ticketRepository.GetAllTickets(query, eventTypeId, currentPage, pageSize);
 
                 public async Task<List<Ticket>> GetTicketsByOwnerIdAsync(Guid? ownerId) => await _ticketRepository.GetByOwnerIdAsync(ownerId);
 

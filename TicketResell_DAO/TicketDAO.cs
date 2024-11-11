@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
@@ -30,14 +31,39 @@ namespace TicketResell_DAO
             }
         }
 
-        public async Task<List<Ticket>> GetAllTickets()
+        public class TicketPagination
         {
-            return await _context.Tickets
+            public List<Ticket> Tickets { get; set; }
+            public int TotalPages { get; set; }
+            public int CurrentPage { get; set; }
+        }
+
+        public async Task<TicketPagination> GetAllTickets(string? query, Guid? eventTypeId, int currentPage, int pageSize)
+        {
+
+            var tickets = _context.Tickets
                             .Where(t => t.TicketStatus == "Available" || t.TicketStatus == "Sold")
                             .Include(t => t.EventType)
                             .Include(t => t.Owner)
                             .Include(t => t.Images)
-                            .ToListAsync();
+                            .AsQueryable();
+            if (!string.IsNullOrEmpty(query))
+            {
+                tickets = tickets.Where(t => t.EventName.ToLower().Contains(query));
+            }
+            if (eventTypeId != null)
+            {
+                tickets = tickets.Where(t => t.EventTypeId == eventTypeId);
+            }
+            int count = await tickets.CountAsync();
+            int TotalPages = (int)Math.Ceiling(count / (double)pageSize);
+            var paginatedTickets = await tickets.Skip((currentPage - 1) * pageSize).Take(pageSize).ToListAsync();
+            return new TicketPagination
+            {
+                Tickets = paginatedTickets,
+                TotalPages = TotalPages,
+                CurrentPage = currentPage
+            };
         }
 
         public async Task<bool> AddTicketAsync(Ticket ticket)

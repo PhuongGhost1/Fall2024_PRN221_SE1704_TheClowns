@@ -8,6 +8,28 @@
 <h1 class="text-center my-4 text-primary">Tickets for Sale</h1>
 
 <div class="container">
+    <div class="search-filter">
+        <form method="post" asp-page-handler="Search" style="display: flex;">
+            <div class="input-group mb-3"
+                style="max-width: 400px;
+                        margin-right: 50px;">
+                <span class="input-group-text" id="inputGroup-sizing-default">Event Name</span>
+                <input type="text" class="form-control" name="searchtxt" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            </div>
+            <div class="input-group mb-3"
+                style="max-width: 300px;
+                        margin-right: 50px;">
+                <label class="input-group-text" for="inputGroupSelect01">Options</label>
+                <select class="form-select" name="eventSelect" id="inputGroupSelect01">
+                    <option selected value="">Choose...</option>
+                    @foreach(var eventType in Model.EventTypes){
+                        <option value="@(eventType.Id)">@eventType.Name</option>
+                    }
+                </select>
+            </div>
+            <button type="submit" class="btn btn-secondary" style="height: 38px;">Search</button>
+        </form>
+    </div>
     @if (Model.Tickets != null && Model.Tickets.Any())
     {
         <div class="row">
@@ -223,6 +245,24 @@
                     </div>
                 </div>
             }
+
+            <nav aria-label="Page navigation example">
+                <ul class="pagination">
+                    <li class="page-item">
+                    <a class="page-link" asp-route-pageIndex = "@(Model.currentPage-1)" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                    </li>
+                    @for(int count = 1; count<=Model.TotalPages; count++){
+                        <li class="page-item @(count == Model.currentPage ? "active" : "")"><a class="page-link" asp-route-pageIndex = "@count">@count</a></li>
+                    }
+                    <li class="page-item">
+                    <a class="page-link" asp-route-pageIndex = "@(Model.currentPage+1)" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     }
     else
@@ -230,3 +270,5 @@
         <p class="text-center">No tickets available.</p>
     }
 </div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

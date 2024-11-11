@@ -76,10 +76,10 @@
                         </span>
                     </div>
 
-                    <div class="card-body">
+                    <div class="card-body" >
                         @if (Model.Messages != null && Model.Messages.Any())
                         {
-                            <div class="chat-messages">
+                            <div class="chat-messages" style="max-height: 600px; overflow-y: scroll;">
                                 @foreach (var message in Model.Messages)
                                 {
                                     bool isBuyerMessage = message.SellerId == null;

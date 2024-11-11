@@ -178,23 +178,154 @@
             <table class="table">
                 <thead>
                     <tr>
+                        <th>No</th>
                         <th>Ticket</th>
                         <th>Date</th>
                         <th>Price</th>
                         <th>Status</th>
                         <th>Buyer</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
+                    @{
+                        int count = 1;
+                    }
                     @foreach (var transaction in Model.Transactions)
                     {
                         <tr>
+                            <td>@count</td>
                             <td>@transaction.Ticket.EventName</td>
                             <td>@transaction.TransactionDate</td>
                             <td>@transaction.Amount</td>
                             <td>@transaction.TransactionStatus</td>
                             <td>@transaction.Buyer.Username</td>
+                            <td>
+                                <button class="btn btn-outline-info" style="font-weight: 600;" type="submit"
+                                    data-bs-toggle="modal" data-bs-target="#popup-info-@count">
+                                    View Detail
+                                </button>
+                            </td>
                         </tr>
+                        <div class="modal fade" id="popup-info-@count" data-bs-backdrop="static" data-bs-keyboard="false"
+                            tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                            <div class="modal-dialog" style="max-width: 800px;">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Transaction Detail</h1>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                            aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="ticket-image" style="width: auto; display: flex;">
+                                            <img style="width: 50%; height: 250px; 
+                                                    object-fit: cover; 
+                                                    object-position: center;
+                                                    margin: 0 auto;
+                                                    margin-bottom: 15px;"
+                                                src="@(transaction.Ticket.Images.FirstOrDefault()?.Url ?? "https://via.placeholder.com/300x200?text=No+Image+Available")"
+                                                alt="">
+                                        </div>
+                                        <div class="Buyer">
+                                            <p class="text-body-secondary">
+                                                Buyer
+                                            </p>
+                                            <div class="info" style="display: flex;">
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;
+                                                    box-sizing: border-box">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Buyer.Email)" readonly>
+                                                        <label for="floatingInput">Email</label>
+                                                    </div>
+                                                </div>
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="email" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Buyer.Username)" readonly>
+                                                        <label for="floatingInput">Username</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Buyer">
+                                            <p class="text-body-secondary">
+                                                Ticket
+                                            </p>
+                                            <div class="info" style="display: flex;">
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;
+                                                    box-sizing: border-box">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="datetime" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Ticket.EventName)" readonly>
+                                                        <label for="floatingInput">Event Name</label>
+                                                    </div>
+                                                </div>
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="datetime" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Ticket.EventType.Name)" readonly>
+                                                        <label for="floatingInput">Event Type</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info" style="display: flex;">
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;
+                                                    box-sizing: border-box">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="datetime" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Ticket.EventDate)" readonly>
+                                                        <label for="floatingInput">Event Date</label>
+                                                    </div>
+                                                </div>
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="datetime" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Ticket.ExpirationDate)" readonly>
+                                                        <label for="floatingInput">Expiration Date</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="info" style="display: flex;">
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;
+                                                    box-sizing: border-box">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="datetime" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="@(transaction.Ticket.Serial)" readonly>
+                                                        <label for="floatingInput">Serial</label>
+                                                    </div>
+                                                </div>
+                                                <div style="flex: 1;
+                                                    padding-right: 100px;">
+                                                    <div class="form-floating mb-3">
+                                                        <input type="datetime" class="form-control" id="floatingInput"
+                                                            placeholder="name@example.com" style="background-color: white;"
+                                                            value="$ @(transaction.Ticket.Price)" readonly>
+                                                        <label for="floatingInput">Price</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        count++;
                     }
                 </tbody>
             </table>

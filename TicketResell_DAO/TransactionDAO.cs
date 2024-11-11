@@ -59,7 +59,14 @@ namespace TicketResell_DAO
 
         public async Task<List<Transactions>> GetTransactionsByUserID(Guid? userID)
         {
-            return await _context.Transactions.Where(t => (t.SellerId == userID ? t.SellerId : t.BuyerId) == userID).OrderByDescending(t => t.TransactionDate).Include(m => m.Buyer).Include(m => m.Ticket).ToListAsync();
+            return await _context.Transactions.Where(t => (t.SellerId == userID ? t.SellerId : t.BuyerId) == userID)
+                                            .OrderByDescending(t => t.TransactionDate)
+                                            .Include(m => m.Buyer)
+                                            .Include(m => m.Ticket)
+                                                .ThenInclude(m => m.Images)
+                                            .Include(m => m.Ticket)
+                                                .ThenInclude(m => m.EventType)
+                                            .ToListAsync();
         }
 
         public async Task<bool> UpdateTransaction(Transactions transaction)
