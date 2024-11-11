@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Azure.Messaging;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using PayPal;
 using PayPal.Api;
@@ -58,18 +59,16 @@ namespace ProjectGroup.Pages.Customer
 
             if (buyerId.HasValue && sellerId.HasValue && ticketId.HasValue)
             {
-                CurrentConversation = await _chatService.GetActiveConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value);                   
+                CurrentConversation = await _chatService.GetActiveConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value);
 
                 if (CurrentConversation == null)
                 {
                     CurrentConversation = await _chatService.CreateConversationAsync(buyerId.Value, sellerId.Value, ticketId.Value);
 
-                    await _notificationService.AddNotificationAsync(UserId, "Your conversation has been procced");                   
+                    await _notificationService.AddNotificationAsync(UserId, "Your conversation has been proceed");
                 }
-                else
-                {
-                    Messages = await _chatService.GetMessagesByConversationIdAsync(CurrentConversation.Id);
-                }
+                
+                 Messages = await _chatService.GetMessagesByConversationIdAsync(CurrentConversation.Id);
 
                 if (Transactions != null) 
                 {

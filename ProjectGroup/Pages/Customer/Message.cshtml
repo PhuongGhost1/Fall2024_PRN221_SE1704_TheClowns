@@ -6,8 +6,7 @@
 }
 
 <div class="container mt-4">
-    @if(Model.Messages != null && Model.Messages.Any())
-    {
+
         @if (TempData["SuccessMessage"] != null)
         {
             <div class="alert alert-success">@TempData["SuccessMessage"]</div>
@@ -138,9 +137,5 @@
                 </div>
             </div>
         </div>
-    }
-    else
-    {
-        <p>No messages contact available</p>
-    }  
+ 
 </div>
