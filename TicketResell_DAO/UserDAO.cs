@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using TicketResell_BusinessObject;
+using static TicketResell_Service.Utilities.SecurityHelper;
 
 namespace TicketResell_DAO
 {
@@ -87,12 +88,12 @@ namespace TicketResell_DAO
             var user = await _context.Users.SingleOrDefaultAsync(obj => obj.Id.Equals(userId));
             if (user != null)
             {
-                user.Password = newPassword;
+                user.Password = HashPassword(newPassword);
                 _context.Users.Update(user);
                 await _context.SaveChangesAsync();
             }
             else flag = false;
-            return flag;    
+            return flag;
         }
 
         public async Task<bool> DeleteAsync(Guid id)
@@ -128,12 +129,8 @@ namespace TicketResell_DAO
 
             if (user == null) return false;
 
-            if (user.Password.Trim().ToLower() != currentPassword.Trim().ToLower())
-            {
-                return false;
-            }
-
-            return true;
+            var hashedCurrentPassword = HashPassword(currentPassword);
+            return user.Password == hashedCurrentPassword;
         }
 
         public async Task<bool> IsEmailExist(string email)
