@@ -18,6 +18,7 @@ namespace TicketResell_Service
         Task<bool> AddTicketAsync(Ticket ticket);
         Task<bool> UpdateTicketAsync(Ticket ticket);
         Task<bool> DeleteTicketAsync(Guid id);
+        Task<int> GetTicketCountAsync();
     }
     public class TicketService : ITicketService
     {
@@ -34,6 +35,8 @@ namespace TicketResell_Service
         public async Task<List<Ticket>> GetByEventTypeAsync(Guid eventTypeId) => await _ticketRepository.GetByEventTypeAsync(eventTypeId);
 
         public async Task<Ticket?> GetTicketByIdAsync(Guid? id) => await _ticketRepository.GetByIdAsync(id);
+
+        public async Task<int> GetTicketCountAsync() => await _ticketRepository.CountAsync();
 
         public async Task<List<Ticket>> GetTicketsAsync() => await _ticketRepository.GetTickets();
 

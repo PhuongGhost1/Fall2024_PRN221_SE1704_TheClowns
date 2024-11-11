@@ -129,5 +129,17 @@ namespace TicketResell_DAO
             return await _context.Transactions.AnyAsync(t => t.Ticket.Conversations.Any(c => c.Id == conversationId) && 
                                         t.TransactionStatus == "Completed");
         }
+
+        public async Task<List<Transactions>> GetAllTransactionsSortedByDate()
+        {
+            return await _context.Transactions
+                                 .ToListAsync();
+        }
+
+        public async Task<int> CountTrsactions()
+        {
+            return await _context.Transactions.CountAsync();
+        }
+
     }
 }

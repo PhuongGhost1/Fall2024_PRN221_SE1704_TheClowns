@@ -39,7 +39,20 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
+              "Title": "TIcketResell_Repository",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+              "RelativeDocumentMoniker": "..\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+              "RelativeToolTip": "..\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-11-11T15:58:20.138Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
               "Title": "SocialMedium.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\SocialMedium.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_BusinessObject\\SocialMedium.cs",
@@ -47,12 +60,11 @@
               "RelativeToolTip": "..\\TicketResell_BusinessObject\\SocialMedium.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T14:39:39.931Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T14:39:39.931Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 32,
               "Title": "_ValidationScriptsPartial.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Shared\\_ValidationScriptsPartial.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
@@ -60,12 +72,11 @@
               "RelativeToolTip": "Pages\\Shared\\_ValidationScriptsPartial.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T13:41:47.141Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T13:41:47.141Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 23,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_Layout.cshtml",
@@ -73,12 +84,11 @@
               "RelativeToolTip": "Pages\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T13:41:46.248Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T13:41:46.248Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
+              "DocumentIndex": 39,
               "Title": "TicketResellContextModelSnapshot.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\Migrations\\TicketResellContextModelSnapshot.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\Migrations\\TicketResellContextModelSnapshot.cs",
@@ -86,16 +96,15 @@
               "RelativeToolTip": "..\\TicketResell_DAO\\Migrations\\TicketResellContextModelSnapshot.cs",
               "ViewState": "AgIAAO4BAAAAAAAAAAAowPkBAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T10:34:04.527Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T10:34:04.527Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 40,
-              "Title": "TicketResell_BusinessObject",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+              "DocumentIndex": 42,
+              "Title": "TicketResell_BusinessObject.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
               "RelativeDocumentMoniker": "..\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
               "RelativeToolTip": "..\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -104,7 +113,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 37,
+              "DocumentIndex": 41,
               "Title": "UserRole.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\UserRole.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_BusinessObject\\UserRole.cs",
@@ -112,16 +121,15 @@
               "RelativeToolTip": "..\\TicketResell_BusinessObject\\UserRole.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T10:01:01.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T10:01:01.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 41,
-              "Title": "TicketResell_Service",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+              "DocumentIndex": 2,
+              "Title": "TicketResell_Service.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
               "RelativeDocumentMoniker": "..\\TicketResell_Service\\TicketResell_Service.csproj",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
               "RelativeToolTip": "..\\TicketResell_Service\\TicketResell_Service.csproj",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
@@ -130,7 +138,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 38,
+              "DocumentIndex": 14,
               "Title": "TicketResellContext.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResellContext.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\TicketResellContext.cs",
@@ -149,14 +157,14 @@
               "RelativeDocumentMoniker": "..\\TicketResell_Service\\TransactionService.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TransactionService.cs",
               "RelativeToolTip": "..\\TicketResell_Service\\TransactionService.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAJ4AAAAlAAAAAAAAAA==",
+              "ViewState": "AgIAAHwAAAAAAAAAAAAAAJ8AAAAHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T09:13:52.18Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 42,
+              "DocumentIndex": 43,
               "Title": "Notifications.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Customer\\Notifications.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Customer\\Notifications.cshtml.cs",
@@ -164,12 +172,11 @@
               "RelativeToolTip": "Pages\\Customer\\Notifications.cshtml.cs",
               "ViewState": "AgIAAAwAAAAAAAAAAAAYwBkAAAAzAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T09:00:06.86Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T09:00:06.86Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 43,
+              "DocumentIndex": 44,
               "Title": "EditTicket.cshtml.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Customer\\EditTicket.cshtml.cs",
               "RelativeDocumentMoniker": "Pages\\Customer\\EditTicket.cshtml.cs",
@@ -177,12 +184,11 @@
               "RelativeToolTip": "Pages\\Customer\\EditTicket.cshtml.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T08:58:04.717Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T08:58:04.717Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "EditTicket.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Customer\\EditTicket.cshtml",
               "RelativeDocumentMoniker": "Pages\\Customer\\EditTicket.cshtml",
@@ -190,12 +196,11 @@
               "RelativeToolTip": "Pages\\Customer\\EditTicket.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T08:58:01.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T08:58:01.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 44,
+              "DocumentIndex": 45,
               "Title": "SocialMediaDAO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\SocialMediaDAO.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\SocialMediaDAO.cs",
@@ -203,12 +208,11 @@
               "RelativeToolTip": "..\\TicketResell_DAO\\SocialMediaDAO.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T08:57:06.915Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T08:57:06.915Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "TransactionRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TransactionRepository.cs",
               "RelativeDocumentMoniker": "..\\TIcketResell_Repository\\TransactionRepository.cs",
@@ -221,20 +225,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 12,
               "Title": "TransactionDAO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TransactionDAO.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\TransactionDAO.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TransactionDAO.cs",
               "RelativeToolTip": "..\\TicketResell_DAO\\TransactionDAO.cs",
-              "ViewState": "AgIAAGwAAAAAAAAAAAAmwI8AAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAmwJEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T08:48:19.809Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 18,
               "Title": "Transactions.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\Transactions.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_BusinessObject\\Transactions.cs",
@@ -242,12 +246,11 @@
               "RelativeToolTip": "..\\TicketResell_BusinessObject\\Transactions.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAAAwwA0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T08:46:31.107Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T08:46:31.107Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 3,
               "Title": "UserService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\UserService.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_Service\\UserService.cs",
@@ -260,20 +263,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 6,
               "Title": "UserRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\UserRepository.cs",
               "RelativeDocumentMoniker": "..\\TIcketResell_Repository\\UserRepository.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\UserRepository.cs",
               "RelativeToolTip": "..\\TIcketResell_Repository\\UserRepository.cs",
-              "ViewState": "AgIAACQAAAAAAAAAAIA1wDQAAABfAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAAASwDQAAABfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T08:41:49.15Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
+              "DocumentIndex": 40,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\User.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_BusinessObject\\User.cs",
@@ -281,25 +284,24 @@
               "RelativeToolTip": "..\\TicketResell_BusinessObject\\User.cs",
               "ViewState": "AgIAACIAAAAAAAAAAAAqwDUAAABYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T08:41:40.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T08:41:40.58Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 13,
               "Title": "UserDAO.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\UserDAO.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\UserDAO.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\UserDAO.cs",
               "RelativeToolTip": "..\\TicketResell_DAO\\UserDAO.cs",
-              "ViewState": "AgIAADAAAAAAAAAAAAAtwEwAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAtwEwAAAAsAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T08:41:07.96Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 5,
               "Title": "TicketService.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketService.cs",
               "RelativeDocumentMoniker": "..\\TicketResell_Service\\TicketService.cs",
@@ -312,7 +314,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "TicketRepository.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TicketRepository.cs",
               "RelativeDocumentMoniker": "..\\TIcketResell_Repository\\TicketRepository.cs",
@@ -331,27 +333,27 @@
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\TicketDAO.cs",
               "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketDAO.cs",
               "RelativeToolTip": "..\\TicketResell_DAO\\TicketDAO.cs",
-              "ViewState": "AgIAAFsAAAAAAAAAAAAAAGwAAAADAAAAAAAAAA==",
+              "ViewState": "AgIAAE4AAAAAAAAAAAAgwG4AAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-11T08:36:00.645Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 39,
-              "Title": "TicketResell_DAO",
-              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+              "DocumentIndex": 0,
+              "Title": "TicketResell_DAO.csproj",
+              "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
               "RelativeDocumentMoniker": "..\\TicketResell_DAO\\TicketResell_DAO.csproj",
-              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+              "ToolTip": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
               "RelativeToolTip": "..\\TicketResell_DAO\\TicketResell_DAO.csproj",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB4AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
               "WhenOpened": "2024-11-11T08:35:39.689Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 19,
               "Title": "_LayoutAdmin.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Shared\\_LayoutAdmin.cshtml",
               "RelativeDocumentMoniker": "Pages\\Shared\\_LayoutAdmin.cshtml",
@@ -359,12 +361,11 @@
               "RelativeToolTip": "Pages\\Shared\\_LayoutAdmin.cshtml",
               "ViewState": "AgIAABgAAAAAAAAAAAAowC8AAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T08:09:01.812Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T08:09:01.812Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 20,
               "Title": "Login.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Authentication\\Login.cshtml",
               "RelativeDocumentMoniker": "Pages\\Authentication\\Login.cshtml",
@@ -372,12 +373,11 @@
               "RelativeToolTip": "Pages\\Authentication\\Login.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T07:12:31.237Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T07:12:31.237Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "ForgotPassword.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Authentication\\ForgotPassword.cshtml",
               "RelativeDocumentMoniker": "Pages\\Authentication\\ForgotPassword.cshtml",
@@ -385,12 +385,11 @@
               "RelativeToolTip": "Pages\\Authentication\\ForgotPassword.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T07:12:30.462Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T07:12:30.462Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 27,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Pages\\_ViewImports.cshtml",
@@ -398,12 +397,11 @@
               "RelativeToolTip": "Pages\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T07:12:17.723Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T07:12:17.723Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 22,
               "Title": "Users.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Admin\\Users.cshtml",
               "RelativeDocumentMoniker": "Pages\\Admin\\Users.cshtml",
@@ -411,12 +409,11 @@
               "RelativeToolTip": "Pages\\Admin\\Users.cshtml",
               "ViewState": "AgIAACQAAAAAAAAAAAAAAB4AAAAeAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T07:09:46.999Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T07:09:46.999Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "Settings.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Admin\\Settings.cshtml",
               "RelativeDocumentMoniker": "Pages\\Admin\\Settings.cshtml",
@@ -424,12 +421,11 @@
               "RelativeToolTip": "Pages\\Admin\\Settings.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T07:09:44.827Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T07:09:44.827Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "Reports.cshtml",
               "DocumentMoniker": "C:\\Users\\Admin\\OneDrive\\M\u00E1y t\u00EDnh\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\Pages\\Admin\\Reports.cshtml",
               "RelativeDocumentMoniker": "Pages\\Admin\\Reports.cshtml",
@@ -437,8 +433,7 @@
               "RelativeToolTip": "Pages\\Admin\\Reports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-11T07:09:43.297Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T07:09:43.297Z"
             },
             {
               "$type": "Document",
@@ -526,8 +521,7 @@
               "RelativeToolTip": "Pages\\Customer\\Message.cshtml.cs",
               "ViewState": "AgIAAJsAAAAAAAAAAIAwwHQAAACBAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T06:33:59.661Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-11T06:33:59.661Z"
             }
           ]
         }

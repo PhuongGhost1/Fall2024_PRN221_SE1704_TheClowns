@@ -105,6 +105,10 @@ namespace TicketResell_DAO
             _context.Tickets.Remove(ticket);
             await _context.SaveChangesAsync();
             return true;
-        }      
+        }
+        public async Task<int> CountTickets()
+        {
+            return await _context.Tickets.CountAsync();
+        }
     }
 }

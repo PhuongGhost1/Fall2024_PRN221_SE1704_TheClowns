@@ -25,6 +25,7 @@ namespace TicketResell_Service
         Task<bool> ValidatePasswordAsync(Guid userId, string currentPassword);
         Task<bool> IsEmailExistAsync(string email);
         Task<List<User>> GetAllUsersAsync();
+        Task<int> GetUsersCount();
     }
     
     public class UserService : IUserService
@@ -48,6 +49,9 @@ namespace TicketResell_Service
         public async Task<User> GetUserByIdAsync(Guid? id) => await _userRepository.GetByIdAsync(id);
 
         public async Task<UserRole> GetUserRoleAsync(Guid userId) => await _userRepository.GetUserRoleAsync(userId);
+
+        public async Task<int> GetUsersCount() => await _userRepository.CountUSers();
+     
 
         public async Task<bool> IsEmailExistAsync(string email) => await _userRepository.IsEmailExist(email);
 

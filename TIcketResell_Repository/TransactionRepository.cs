@@ -21,6 +21,8 @@ namespace TIcketResell_Repository
         Task<int> CheckBookingPunishment(Guid? userId, string status);
         Task<int> CheckBookingPunishmentForPending(Guid? userId);
         Task<bool> CheckIsTransactionCompleted(Guid? conversationId);
+        Task<List<Transactions>> TransactionsSortedByDate();
+        Task<int> CountAsync();
     }
     public class TransactionRepository : ITransactionRepository
     {
@@ -31,6 +33,8 @@ namespace TIcketResell_Repository
         public async Task<int> CheckBookingPunishmentForPending(Guid? userId) => await TransactionDAO.getInstance.CheckBookingPunishmentForPending(userId);
 
         public async Task<bool> CheckIsTransactionCompleted(Guid? conversationId) => await TransactionDAO.getInstance.CheckIsTransactionCompleted(conversationId);
+
+        public async Task<int> CountAsync() => await TransactionDAO.getInstance.CountTrsactions();
 
         public async Task<Transactions> GetByIdAsync(Guid id) => await TransactionDAO.getInstance.GetTransactionByID(id);
 
@@ -43,6 +47,8 @@ namespace TIcketResell_Repository
         public async Task<bool> GetMoneyWalletFromBuyer(Guid? userId, decimal price) => await TransactionDAO.getInstance.GetMoneyToWalletById(userId, price);
 
         public async Task<Transactions?> GetTransactionBySomeIds(Guid? buyerId, Guid? sellerId, Guid? ticketId) => await TransactionDAO.getInstance.GetTransactionBySomeIds(buyerId, sellerId, ticketId);
+
+        public async Task<List<Transactions>> TransactionsSortedByDate() => await TransactionDAO.getInstance.GetAllTransactionsSortedByDate();
 
         public async Task<bool> UpdateAsync(Transactions transaction) => await TransactionDAO.getInstance.UpdateTransaction(transaction);
     }

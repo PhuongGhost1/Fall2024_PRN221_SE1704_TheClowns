@@ -23,7 +23,7 @@ public partial class User
 
     public decimal? Wallet { get; set; }
 
-    public string? Status { get; set; }
+    public string? Status { get; set; } = "Active";
 
     public virtual ICollection<Chat> ChatBuyers { get; set; } = new List<Chat>();
 
