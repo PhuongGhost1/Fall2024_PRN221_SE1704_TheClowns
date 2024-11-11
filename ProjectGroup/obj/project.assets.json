@@ -8,19 +8,19 @@
     "net8.0": []
   },
   "packageFolders": {
-    "C:\\Users\\Asus\\.nuget\\packages\\": {}
+    "C:\\Users\\ibaxq\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
+      "projectUniqueName": "C:\\Users\\ibaxq\\Desktop\\FPTU\\Semester7\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
       "projectName": "ProjectGroup",
-      "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
-      "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-      "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\obj\\",
+      "projectPath": "C:\\Users\\ibaxq\\Desktop\\FPTU\\Semester7\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+      "packagesPath": "C:\\Users\\ibaxq\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ibaxq\\Desktop\\FPTU\\Semester7\\PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\ibaxq\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -70,7 +70,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
