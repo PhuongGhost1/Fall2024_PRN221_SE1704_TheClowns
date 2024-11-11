@@ -145,5 +145,11 @@ namespace TicketResell_DAO
         {
             return await _context.Users.OrderByDescending(u => u.CreatedAt).ToListAsync();
         }
+        public async Task<int> CountUSers()
+        {
+            return await _context.Users.CountAsync();
+        }
+
+
     }
 }

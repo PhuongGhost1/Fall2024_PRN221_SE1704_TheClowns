@@ -1,15 +1,15 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
         "projectName": "ProjectGroup",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\obj\\",
         "projectStyle": "PackageReference",
@@ -33,11 +33,11 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
               },
-              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
-                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj"
               }
             }
           }
@@ -103,12 +103,12 @@
         }
       }
     },
-    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
         "projectName": "TicketResell_BusinessObject",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\obj\\",
         "projectStyle": "PackageReference",
@@ -190,12 +190,12 @@
         }
       }
     },
-    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
         "projectName": "TicketResell_DAO",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\obj\\",
         "projectStyle": "PackageReference",
@@ -219,8 +219,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
-                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_BusinessObject\\TicketResell_BusinessObject.csproj"
               }
             }
           }
@@ -297,12 +297,12 @@
         }
       }
     },
-    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
         "projectName": "TIcketResell_Repository",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\obj\\",
         "projectStyle": "PackageReference",
@@ -326,8 +326,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
-                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_DAO\\TicketResell_DAO.csproj"
               }
             }
           }
@@ -366,12 +366,12 @@
         }
       }
     },
-    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
         "projectName": "TicketResell_Service",
-        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\TicketResell_Service.csproj",
         "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TicketResell_Service\\obj\\",
         "projectStyle": "PackageReference",
@@ -395,8 +395,8 @@
           "net8.0": {
             "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
-                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj"
+              "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj": {
+                "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\TIcketResell_Repository\\TIcketResell_Repository.csproj"
               }
             }
           }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "lmHBQMQ/Lho=",
+  "dgSpecHash": "VuhB8I8clVM=",
   "success": true,
-  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+  "projectFilePath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\Project PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Admin\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\Admin\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",

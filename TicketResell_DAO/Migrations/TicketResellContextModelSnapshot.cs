@@ -500,6 +500,11 @@ namespace TicketResell_DAO.Migrations
                         .HasColumnType("nvarchar(50)")
                         .HasColumnName("username");
 
+                    b.Property<string>("Status")
+                        .HasMaxLength(10)
+                        .HasColumnType("nvarchar(10)")
+                        .HasColumnName("status");
+
                     b.HasKey("Id")
                         .HasName("PK__User__3213E83FE1FCAFE4");
 
