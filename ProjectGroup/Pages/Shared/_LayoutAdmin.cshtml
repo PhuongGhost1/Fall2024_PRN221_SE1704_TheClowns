@@ -59,7 +59,7 @@
                 <div class="user-dropdown">
                     
 
-                        @if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483"))
+                        @if (!string.IsNullOrEmpty(Username) && RoleId != null && (RoleId == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483") || RoleId == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A")))
                         {
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
