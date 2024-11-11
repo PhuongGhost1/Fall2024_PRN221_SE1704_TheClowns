@@ -1,12 +1,114 @@
 ﻿@page
 @model ProjectGroup.Pages.Admin.EventsModel
-@{
-    Layout = "_LayoutAdmin";
-    ViewData["Title"] = "Events Management";
-}
 
-<div class="content">
-    <p>Events</p>
+<div class="container mt-5">
+    <h1 class="text-center mb-4 text-primary">Manage Events</h1>
+    @if (TempData["Error"] != null)
+    {
+        <div class="alert alert-danger">
+            @TempData["Error"]
+        </div>
+    }
 
+    @if (TempData["Success"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Success"]
+        </div>
+    }
 
+    <div class="card mb-4 shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h4 class="card-title mb-0">@((Model.Event.Id == Guid.Empty) ? "Create Event" : "Update Event")</h4>
+        </div>
+        <div class="card-body">
+            <form method="post" asp-page-handler="@((Model.Event.Id == Guid.Empty) ? "Create" : "Update")">
+                <div class="mb-3">
+                    <label for="Name" class="form-label">Event Name</label>
+                    <input type="text" id="Name" name="Event.Name" asp-for="Event.Name" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-success">@((Model.Event.Id == Guid.Empty) ? "Create Event" :
+                    "Update Event")</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-dark text-white">
+            <h4 class="card-title mb-0">Existing Events</h4>
+        </div>
+        <div class="card-body">
+            <table class="table table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Event Name</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var eventType in Model.Events)
+                    {
+                        <tr>
+                            <td>@eventType.Name</td>
+                            <td>
+                                <form method="post" asp-page-handler="Delete" class="d-inline">
+                                    <input type="hidden" name="id" value="@eventType.Id" />
+                                    <button type="submit" class="btn btn-danger btn-sm">
+                                        <i class="bi bi-trash"></i> Delete
+                                    </button>
+                                </form>
+                                <button class="btn btn-warning btn-sm" data-bs-toggle="modal"
+                                    data-bs-target="#editEventModal" data-id="@eventType.Id" data-name="@eventType.Name">
+                                    <i class="bi bi-pencil"></i> Edit
+                                </button>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
 </div>
+
+<!-- Modal for editing event -->
+<div class="modal fade" id="editEventModal" tabindex="-1" aria-labelledby="editEventModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="editEventModalLabel">Edit Event</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form method="post" asp-page-handler="Update">
+                    <input type="hidden" id="modalEventId" name="Event.Id" />
+                    <div class="mb-3">
+                        <label for="Name" class="form-label">Event Name</label>
+                        <input type="text" id="Name" name="Event.Name" asp-for="Event.Name" class="form-control" />
+                    </div>
+                    <button type="submit" class="btn btn-success">Update Event</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- JavaScript to populate modal with event data -->
+<script>
+    const editButtons = document.querySelectorAll('[data-bs-toggle="modal"]');
+    editButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const eventId = button.getAttribute('data-id');
+            const eventName = button.getAttribute('data-name');
+
+            // Set the hidden input and event name in the modal form
+            document.getElementById('modalEventId').value = eventId;
+            document.getElementById('modalEventName').value = eventName;
+        });
+    });
+</script>
+
+<!-- Bootstrap Icons CDN for trash and pencil icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+
+<!-- Bootstrap JS CDN (to handle modal functionality) -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>

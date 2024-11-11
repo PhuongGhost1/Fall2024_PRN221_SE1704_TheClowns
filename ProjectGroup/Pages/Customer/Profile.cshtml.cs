@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using TicketResell_BusinessObject;
@@ -12,6 +13,9 @@ namespace ProjectGroup.Pages.Customer
         private readonly IUserService _userService;
         private readonly ITransactionService _transactionService;
         private readonly ISocialMediaService _socialMediaService;
+
+        [BindProperty]
+        public User Customer { get; set; }
 
         [BindProperty]
         public List<Transactions> Transactions { get; set; }
@@ -37,6 +41,15 @@ namespace ProjectGroup.Pages.Customer
         [BindProperty]
         public string ConfirmPassword { get; set; }
 
+        [BindProperty]
+        public string EditUserName { get; set; }
+
+        [BindProperty]
+        public string UserEmail { get; set; }
+
+        [BindProperty]
+        public string EditUserPhone { get; set; }
+
         public ProfileModel(ITicketService ticketService, IUserService userService, ITransactionService transactionService,
             IHttpContextAccessor contextAccessor, ISocialMediaService socialMediaService)
         {
@@ -45,6 +58,33 @@ namespace ProjectGroup.Pages.Customer
             _transactionService = transactionService;
             _contextAccessor = contextAccessor;
             _socialMediaService = socialMediaService;
+        }
+
+        private async Task LoadDataAsync()
+        {
+            string username = _contextAccessor.HttpContext.Session.GetString("UserName");
+            string userIdString = _contextAccessor.HttpContext.Session.GetString("UserId");
+            string roleIdString = _contextAccessor.HttpContext.Session.GetString("RoleId");
+
+            Guid? roleId = string.IsNullOrEmpty(roleIdString) ? (Guid?)null : Guid.Parse(roleIdString);
+            Guid? userId = string.IsNullOrEmpty(userIdString) ? (Guid?)null : Guid.Parse(userIdString);
+
+            if (!string.IsNullOrEmpty(username) && roleId != null && userId != null)
+            {
+                Transactions = await _transactionService.GetTransactionsByUserIdAsync(userId);
+                PostedTickets = await _ticketService.GetTicketsByOwnerIdAsync(userId);
+
+                var socialMediaList = await _socialMediaService.GetSocialMediaByUserId(userId);
+                FacebookLink = socialMediaList.FirstOrDefault(s => s.Type.Trim() == "Facebook")?.Link;
+                TwitterLink = socialMediaList.FirstOrDefault(s => s.Type.Trim() == "Twitter")?.Link;
+                InstagramLink = socialMediaList.FirstOrDefault(s => s.Type.Trim() == "Instagram")?.Link;
+
+                Customer = await _userService.GetUserByIdAsync(userId);
+                CurrentPassword = Customer.Password;
+                EditUserName = Customer.Username;
+                UserEmail = Customer.Email;
+                EditUserPhone = Customer.Phone;
+            }
         }
 
         public async Task<IActionResult> OnGetAsync()
@@ -71,8 +111,11 @@ namespace ProjectGroup.Pages.Customer
                 TwitterLink = socialMediaList.FirstOrDefault(s => s.Type.Trim() == "Twitter")?.Link;
                 InstagramLink = socialMediaList.FirstOrDefault(s => s.Type.Trim() == "Instagram")?.Link;
 
-                var user = await _userService.GetUserByIdAsync(userId);
-                CurrentPassword = user.Password;
+                Customer = await _userService.GetUserByIdAsync(userId);
+                CurrentPassword = Customer.Password;
+                EditUserName = Customer.Username;
+                UserEmail = Customer.Email;
+                EditUserPhone = Customer.Phone;
             }
             else
             {
@@ -81,6 +124,67 @@ namespace ProjectGroup.Pages.Customer
 
             return Page();
         }
+
+        public async Task<IActionResult> OnPostUpdateProfileAsync()
+        {
+            var userIdString = _contextAccessor.HttpContext.Session.GetString("UserId");
+            if (!Guid.TryParse(userIdString, out Guid userId))
+            {
+                TempData["ErrorMessage"] = "User not found. Please log in again.";
+                return RedirectToPage("/Authentication/Login");
+            }
+
+            if (string.IsNullOrEmpty(EditUserName) || string.IsNullOrEmpty(EditUserPhone))
+            {
+                await LoadDataAsync();
+                ModelState.AddModelError(string.Empty, "All profile fields are required.");
+                TempData["ErrorMessage"] = "All profile fields are required.";
+                return Page();
+            }
+
+            if (EditUserPhone.Length < 9 || EditUserPhone.Length > 12 || !Regex.IsMatch(EditUserPhone, @"^\d{9,12}$"))
+            {
+                if (!Regex.IsMatch(EditUserPhone, @"^\d{9,12}$"))
+                {
+                    await LoadDataAsync();
+                    ModelState.AddModelError("EditUserPhone", "Phone number must contain only digits and be between 9 and 12 characters.");
+                    TempData["ErrorMessage"] = "Phone number must contain only digits and be between 9 and 12 characters.";
+                    return Page();
+                }
+                else
+                {
+                    await LoadDataAsync();
+                    ModelState.AddModelError("EditUserPhone", "Phone number must be between 9 and 12 digits.");
+                    TempData["ErrorMessage"] = "Phone number must be between 9 and 12 digits.";
+                    return Page();
+                }
+
+            }
+
+            var existingUser = await _userService.GetUserByIdAsync(userId);
+
+            if (existingUser == null)
+            {
+                TempData["ErrorMessage"] = "User not found. Please log in again.";
+                return RedirectToPage("/Authentication/Login");
+            }
+
+            existingUser.Username = EditUserName.Trim();
+            existingUser.Phone = EditUserPhone.Trim();
+
+            bool updateSuccessful = await _userService.UpdateUserAsync(existingUser);
+            if (!updateSuccessful)
+            {
+                await LoadDataAsync();
+                TempData["ErrorMessage"] = "Failed to update the profile. Please try again.";
+                return Page();
+            }
+
+            await LoadDataAsync();
+            TempData["SuccessMessage"] = "Profile updated successfully!";
+            return Page();
+        }
+
 
         public async Task<IActionResult> OnPostChangePasswordAsync()
         {
@@ -136,7 +240,7 @@ namespace ProjectGroup.Pages.Customer
         {
             var ticket = await _ticketService.GetTicketByIdAsync(id);
 
-            if (ticket == null) 
+            if (ticket == null)
             {
                 TempData["ErrorMessage"] = "Ticket not found!";
                 return Page();

@@ -14,6 +14,8 @@ namespace TIcketResell_Repository
         Task<bool> AddEventType(EventType eventType);
         Task<bool> UpdateEventType(EventType eventType);
         Task<bool> DeleteEventType(Guid? id);
+
+        Task<bool> IsEventNameExistsAsync(string name);
     }
 
     public class EventRepository : IEventRepository
@@ -27,5 +29,10 @@ namespace TIcketResell_Repository
         public async Task<EventType?> GetEventById(Guid? id) => await EventDAO.GetInstance.GetEventById(id);
 
         public async Task<bool> UpdateEventType(EventType eventType) => await EventDAO.GetInstance.UpdateEventType(eventType);
+
+        public async Task<bool> IsEventNameExistsAsync(string name)
+        {
+            return await EventDAO.GetInstance.IsEventNameExistsAsync(name);
+        }
     }
 }

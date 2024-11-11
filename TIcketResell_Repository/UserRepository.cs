@@ -23,11 +23,14 @@ namespace TIcketResell_Repository
         Task<bool> ValidatePassword(Guid userId, string currentPassword);
         Task<bool> IsEmailExist(string email);
         Task<List<User>> GetAllUsers();
+        Task<int> CountUSers();
     }
 
     public class UserRepository : IUserRepository
     {
         public async Task<bool> AddAsync(User user) => await UserDAO.getInstance.AddAsync(user);
+
+        public async Task<int> CountUSers() => await UserDAO.getInstance.CountUSers();
 
         public async Task<bool> DeleteAsync(Guid id) => await UserDAO.getInstance.DeleteAsync(id);
 

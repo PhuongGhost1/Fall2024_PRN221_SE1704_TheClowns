@@ -83,16 +83,15 @@ namespace TicketResell_DAO
 
         public async Task<bool> SaveNewPassword(Guid userId, string newPassword)
         {
-            bool flag = true;
-            var user = await _context.Users.SingleOrDefaultAsync(obj => obj.Id.Equals(userId));
-            if (user != null)
+            var user = await _context.Users.FirstOrDefaultAsync(u => u.Id == userId);
+            if (user == null) return false;
+            var userSave = new User
             {
-                user.Password = newPassword;
-                _context.Users.Update(user);
-                await _context.SaveChangesAsync();
-            }
-            else flag = false;
-            return flag;    
+                Password = newPassword
+            };
+            _context.Users.Update(userSave);
+            await _context.SaveChangesAsync();
+            return true;
         }
 
         public async Task<bool> DeleteAsync(Guid id)
@@ -128,12 +127,7 @@ namespace TicketResell_DAO
 
             if (user == null) return false;
 
-            if (user.Password.Trim().ToLower() != currentPassword.Trim().ToLower())
-            {
-                return false;
-            }
-
-            return true;
+            return user.Password == currentPassword;
         }
 
         public async Task<bool> IsEmailExist(string email)
@@ -145,5 +139,11 @@ namespace TicketResell_DAO
         {
             return await _context.Users.OrderByDescending(u => u.CreatedAt).ToListAsync();
         }
+        public async Task<int> CountUSers()
+        {
+            return await _context.Users.CountAsync();
+        }
+
+
     }
 }

@@ -20,10 +20,14 @@ namespace TIcketResell_Repository
         Task<bool> DeleteAsync(Guid id);
         Task<List<Ticket>> GetTicketPending();
         Task<bool> TicketStatusUpdate(Guid ticketId, string Status);
+        Task<int> CountAsync();
     }
     public class TicketRepository : ITicketRepository
     {
         public async Task<bool> AddAsync(Ticket ticket) => await TicketDAO.getInstance.AddTicketAsync(ticket);
+
+        public async Task<int> CountAsync() => await TicketDAO.getInstance.CountTickets();
+
 
         public async Task<bool> DeleteAsync(Guid id) => await TicketDAO.getInstance.DeleteTicket(id);
 
@@ -42,5 +46,6 @@ namespace TIcketResell_Repository
         public async Task<bool> TicketStatusUpdate(Guid ticketId, string Status) => await TicketDAO.getInstance.TicketStatusUpdate(ticketId, Status);
 
         public async Task<bool> UpdateTicketStatus(Ticket ticket) => await TicketDAO.getInstance.UpdateTicketStatus(ticket);
+
     }
 }

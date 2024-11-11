@@ -14,6 +14,9 @@ namespace TicketResell_Service
         Task<bool> AddEventTypeAsync(EventType eventType);
         Task<bool> UpdateEventTypeAsync(EventType eventType);
         Task<bool> DeleteEventTypeAsync(Guid id);
+
+        Task<bool> IsEventNameExistsAsync(string name);
+
     }
     public class EventService : IEventService
     {
@@ -32,5 +35,12 @@ namespace TicketResell_Service
         public async Task<EventType?> GetEventByIdAsync(Guid? id) => await _eventRepository.GetEventById(id);
 
         public async Task<bool> UpdateEventTypeAsync(EventType eventType) => await _eventRepository.UpdateEventType(eventType);
+
+
+        public async Task<bool> IsEventNameExistsAsync(string name)
+        {
+            return await _eventRepository.IsEventNameExistsAsync(name);
+        }
+
     }
 }

@@ -24,7 +24,7 @@ namespace ProjectGroup.Pages.Admin
 
             if (!string.IsNullOrEmpty(username) && roleId != null)
             {
-                if (roleId == Guid.Parse("57FA54D1-7C67-4405-B277-B8A58049FF3C"))
+                if (roleId != Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A"))
                 {
                     return RedirectToPage("/TicketsPage/Index");
                 }

@@ -39,7 +39,8 @@
 
         <div class="form-group mb-3">
             <label asp-for="Ticket.EventDate" class="control-label"></label>
-            <input asp-for="Ticket.EventDate" class="form-control" type="date" required />
+            <input asp-for="Ticket.EventDate" class="form-control" type="date"
+                min="@DateTime.Now.ToString("yyyy-MM-dd")" required />
             <span asp-validation-for="Ticket.EventDate" class="text-danger"></span>
         </div>
 
@@ -53,13 +54,15 @@
 
         <div class="form-group mb-3">
             <label asp-for="Ticket.Price" class="control-label"></label>
-            <input asp-for="Ticket.Price" class="form-control" type="number" step="0.01" placeholder="Enter ticket price" required />
+            <input asp-for="Ticket.Price" class="form-control" type="number" min="0.01" step="0.01"
+                placeholder="Enter ticket price" required />
             <span asp-validation-for="Ticket.Price" class="text-danger"></span>
         </div>
 
         <div class="form-group mb-3">
             <label asp-for="Ticket.ExpirationDate" class="control-label"></label>
-            <input asp-for="Ticket.ExpirationDate" class="form-control" type="date" required />
+            <input asp-for="Ticket.ExpirationDate" class="form-control" type="date"
+                min="@DateTime.Now.ToString("yyyy-MM-dd")" id="expirationDate" required />
             <span asp-validation-for="Ticket.ExpirationDate" class="text-danger"></span>
         </div>
 
@@ -73,14 +76,14 @@
         {
             <div class="mb-2">
                 <img src="@Model.Ticket.Images.FirstOrDefault().Url" alt="Current Cover Image"
-                     style="max-width: 200px; max-height: 200px; display: block;" />
+                    style="max-width: 200px; max-height: 200px; display: block;" />
                 <small>Current Cover Image</small>
             </div>
         }
 
         <div class="custom-file">
+            <label class="custom-file-label" for="customFileCover">Choose new cover image</label><br />
             <input asp-for="CoverPhoto" class="custom-file-input" id="customFileCover" />
-            <label class="custom-file-label" for="customFileCover">Choose new cover image</label>
         </div>
         <span asp-validation-for="CoverPhoto" class="text-danger"></span>
 
@@ -100,5 +103,15 @@
     }
 }
 
-<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/4/6/9fcpA4V0+h0XrC0W0mR3erOn21vIx1hO12" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+Knujsl5/4/6/9fcpA4V0+h0XrC0W0mR3erOn21vIx1hO12"
+    crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+    document.getElementById("eventDate").addEventListener("change", function () {
+        const eventDate = this.value;
+        const expirationDateInput = document.getElementById("expirationDate");
+
+        expirationDateInput.min = eventDate;
+    });
+</script>

@@ -107,6 +107,10 @@ namespace TicketResell_DAO
             await _context.SaveChangesAsync();
             return true;
         }
+        public async Task<int> CountTickets()
+        {
+            return await _context.Tickets.CountAsync();
+        }
         public async Task<List<Ticket>> GetTicketPending()
         {
             return await _context.Tickets

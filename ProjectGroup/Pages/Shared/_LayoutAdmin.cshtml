@@ -1,5 +1,4 @@
-﻿@using Azure
-@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,15 +32,23 @@
                 }
                 else if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A"))
                 {
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Tickets"><i class="fas fa-ticket-alt"></i> Tickets Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Events"><i class="fas fa-calendar-alt"></i> Events Management</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" asp-page="/Admin/Reports"><i class="fas fa-chart-line"></i> Reports</a>
-                    </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Dashboard"><i class="fas fa-dashboard"></i> Dashboard</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Users"><i class="fas fa-user-alt"></i> User Management</a>
+                        </li>                   
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Staff/Tickets"><i class="fas fa-ticket-alt"></i> Tickets Management</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Events"><i class="fas fa-calendar-alt"></i> Events Management</a>
+                        </li>                                          
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Admin/Reports"><i class="fas fa-chart-line"></i> Reports</a>
+                        </li>
+                       
                 }              
             </ul>
         </nav>
@@ -52,7 +59,7 @@
                 <div class="user-dropdown">
                     
 
-                        @if (!string.IsNullOrEmpty(Username) && RoleId != null && RoleId == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483"))
+                        @if (!string.IsNullOrEmpty(Username) && RoleId != null && (RoleId == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483") || RoleId == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A")))
                         {
                             <div class="dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
