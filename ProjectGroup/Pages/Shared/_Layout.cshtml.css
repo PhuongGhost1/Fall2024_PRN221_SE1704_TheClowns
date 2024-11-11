@@ -46,3 +46,13 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.dropdown-item p {
+  margin: 0;
+  white-space: normal;  
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  max-width: 100%;
+  color: black;
+  cursor: pointer;
+}

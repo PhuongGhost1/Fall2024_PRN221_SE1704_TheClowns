@@ -24,45 +24,60 @@
                         </div>
 
                         <div class="card-body">
-                            <p><strong>Date:</strong> @ticket.EventDate?.ToString("MMMM dd, yyyy")</p>
+                            <p><strong>Date:</strong> @ticket.EventDate?.ToString("dd/MM/yyyy")</p>
                             <p><strong>Price:</strong> $@ticket.Price?.ToString("F2")</p>
-                            <p class="text-muted"><small>Expires on: @ticket.ExpirationDate?.ToString("MMMM dd, yyyy")</small></p>
+                            <p class="text-muted"><small>Expires on: @ticket.ExpirationDate?.ToString("dd/MM/yyyy")</small></p>
                             <span class="badge @(ticket.TicketStatus == "Available" ? "bg-success text-light" : "bg-danger text-light")">
                                 @ticket.TicketStatus
                             </span>
                         </div>
 
                         <div class="card-footer text-center bg-light">
-                            <form method="post" asp-page-handler="SubmitComment">
-                                <input type="hidden" name="ticketId" value="@ticket.Id" />
-                                <div class="input-group mb-2">
-                                    <input type="text" name="comment" class="form-control" placeholder="Add a comment..." required />
-                                </div>
-                                <div class="input-group mb-3">
-                                    <label class="input-group-text" for="ratingSelect">Rating</label>
-                                    <select class="form-select" name="rating" id="ratingSelect" required>
-                                        <option selected disabled value="">Choose...</option>
-                                        @for (int i = 1; i <= 5; i++)
-                                        {
-                                            var stars = new string('★', i) + new string('☆', 5 - i);
-                                            <option class="text-warning" value="@i">@stars</option>
-                                        }
-                                    </select>
-                                </div>
-                                <button type="submit" class="btn btn-outline-primary btn-sm" @(Model.UserId == null ? "disabled" : "")>
-                                    Submit Feedback
-                                </button>
-                            </form>
+                                <form method="post" asp-page-handler="SubmitComment">
+                                    <input type="hidden" name="ticketId" value="@ticket.Id" />
+                                    <div class="input-group mb-2">
+                                        <input type="text" name="comment" class="form-control" placeholder="Add a comment..." required />
+                                    </div>
+                                    <div class="input-group mb-3">
+                                        <label class="input-group-text" for="ratingSelect">Rating</label>
+                                        <select class="form-select" name="rating" id="ratingSelect" required>
+                                            <option selected disabled value="">Choose...</option>
+                                            @for (int i = 1; i <= 5; i++)
+                                            {
+                                                var stars = new string('★', i) + new string('☆', 5 - i);
+                                                <option class="text-warning" value="@i">@stars</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    @if (Model.UserId != ticket.OwnerId)
+                                    {
+                                        <button type="submit" class="btn btn-outline-primary btn-sm" @(Model.UserId == null ? "disabled" : "")>
+                                            Submit Feedback
+                                        </button>
+                                    }else{
+                                        <button type="submit" class="btn btn-outline-primary btn-sm" data-bs-toggle="modal" data-bs-target="#cannotCommentThat-@ticket.Id">
+                                            Submit Feedback
+                                        </button>
+                                    }
+                                </form>
                             <br>
                             <button type="button" class="btn btn-outline-primary btn-sm"
                                     data-bs-toggle="modal" data-bs-target="#ticketModal-@ticket.Id"
                             @(Model.UserId == null ? "disabled" : "")>
                                 View Details
                             </button>
-                            <button type="button" class="btn btn-success btn-sm"
-                                    onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")">
-                                Buy Now
-                            </button>
+                            @if (Model.UserId != ticket.OwnerId)
+                            {
+                                <button type="button" class="btn btn-success btn-sm"
+                                        onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")">
+                                    Buy Now
+                                </button>
+                            }else{
+                                <button type="button" class="btn btn-success btn-sm"
+                                        data-bs-toggle="modal" data-bs-target="#cannotBuyThat-@ticket.Id">
+                                    Buy Now
+                                </button>
+                            }
                         </div>
                     </div>
 
@@ -145,7 +160,39 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    <button type="button" class="btn btn-primary">Proceed to Buy</button>
+                                    @if(Model.UserId != ticket.OwnerId){
+                                        <button type="button" class="btn btn-primary"
+                                        onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")"
+                                        >Proceed to Buy</button>
+                                    }else{
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cannotBuyThat-@ticket.Id">Proceed to Buy</button>
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="cannotCommentThat-@ticket.Id" tabindex="-1" aria-labelledby="ticketModalLabel-@ticket.Id" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p>You cannot comment your own ticket :v !</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="modal fade" id="cannotBuyThat-@ticket.Id" tabindex="-1" aria-labelledby="ticketModalLabel-@ticket.Id" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p>You cannot buy your own ticket :v !</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                 </div>
                             </div>
                         </div>

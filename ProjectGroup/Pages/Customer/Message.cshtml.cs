@@ -67,13 +67,13 @@ namespace ProjectGroup.Pages.Customer
 
                     await _notificationService.AddNotificationAsync(UserId, "Your conversation has been proceed");
                 }
-                
-                 Messages = await _chatService.GetMessagesByConversationIdAsync(CurrentConversation.Id);
 
-                if (Transactions != null) 
+                Messages = await _chatService.GetMessagesByConversationIdAsync(CurrentConversation.Id);
+
+                if (Transactions != null)
                 {
                     Transactions = await _transactionService.GetTransactionBySomeIdsAsync(buyerId.Value, sellerId.Value, ticketId.Value);
-                }             
+                }
             }
 
             return Page();
@@ -196,7 +196,7 @@ namespace ProjectGroup.Pages.Customer
                 await _notificationService.AddNotificationAsync(buyerId, "Transaction created successfully! Payment link sent to the buyer.");
 
                 TempData["SuccessMessage"] = "Transaction created successfully! Payment link sent to the buyer.";
-                return RedirectToPage("/Customer/Message", new { conversationId = conversationId });
+                return Redirect($"http://localhost:5157/Customer/Message?buyerId={buyerId}&sellerId={sellerId}&ticketId={ticketId}");
             }
 
             TempData["ErrorMessage"] = "Failed to create transaction.";
