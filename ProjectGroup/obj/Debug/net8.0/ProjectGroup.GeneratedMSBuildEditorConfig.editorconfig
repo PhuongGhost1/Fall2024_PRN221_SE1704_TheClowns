@@ -9,39 +9,39 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = ProjectGroup
 build_property.RootNamespace = ProjectGroup
-build_property.ProjectDir = D:\University\kì 7(5.9.2024)\PRN221\Storage\ProjectGroup\
+build_property.ProjectDir = C:\Users\Admin\OneDrive\Máy tính\ProJect PRN221\Fall2024_PRN221_SE1704_TheClowns\ProjectGroup\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 8.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = D:\University\kì 7(5.9.2024)\PRN221\Storage\ProjectGroup
+build_property.MSBuildProjectDirectory = C:\Users\Admin\OneDrive\Máy tính\ProJect PRN221\Fall2024_PRN221_SE1704_TheClowns\ProjectGroup
 build_property._RazorSourceGeneratorDebug = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Error.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Index.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Privacy.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Privacy.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/_ViewImports.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/_ViewStart.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[D:/University/kì 7(5.9.2024)/PRN221/Storage/ProjectGroup/Pages/Shared/_Layout.cshtml]
+[C:/Users/Admin/OneDrive/Máy tính/ProJect PRN221/Fall2024_PRN221_SE1704_TheClowns/ProjectGroup/Pages/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-uid17s0mm4

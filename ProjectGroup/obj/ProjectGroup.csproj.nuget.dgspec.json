@@ -1,20 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj": {}
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {}
   },
   "projects": {
-    "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj": {
+    "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
+        "projectUniqueName": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
         "projectName": "ProjectGroup",
-        "projectPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\ProjectGroup.csproj",
-        "packagesPath": "C:\\Users\\Asus\\.nuget\\packages\\",
-        "outputPath": "D:\\University\\kì 7(5.9.2024)\\PRN221\\Storage\\ProjectGroup\\obj\\",
+        "projectPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\ProjectGroup.csproj",
+        "packagesPath": "C:\\Users\\Admin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Admin\\OneDrive\\Máy tính\\ProJect PRN221\\Fall2024_PRN221_SE1704_TheClowns\\ProjectGroup\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
         "configFilePaths": [
-          "C:\\Users\\Asus\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Admin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -64,7 +68,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
