@@ -70,6 +70,7 @@ namespace TicketResell_Service
                 ReputationPoints = 0,
                 CreatedAt = DateTime.Now,
                 IsVerified = false,
+                Status = "Active",
                 UserRoles = new List<UserRole>(){
                     new UserRole()
                     {
