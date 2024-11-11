@@ -51,7 +51,7 @@ namespace TicketResell_DAO
                 .Include(c => c.Ticket)
                 .Include(c => c.Buyer)
                 .Include (c => c.Seller)
-                .FirstOrDefaultAsync(c => c.BuyerId == buyerId && c.SellerId == sellerId && c.EndedAt == null && c.TicketId == ticketId);
+                .FirstOrDefaultAsync(c => c.BuyerId == buyerId && c.SellerId == sellerId && c.TicketId == ticketId);
         }
 
         public async Task<bool> EndConversation(Guid? conversationId)
