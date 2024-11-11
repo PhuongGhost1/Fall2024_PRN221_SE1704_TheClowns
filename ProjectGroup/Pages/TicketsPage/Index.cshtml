@@ -66,15 +66,22 @@
                             @(Model.UserId == null ? "disabled" : "")>
                                 View Details
                             </button>
-                            @if (Model.UserId != ticket.OwnerId)
-                            {
-                                <button type="button" class="btn btn-success btn-sm"
-                                        onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")">
-                                    Buy Now
-                                </button>
+                            @if(ticket.TicketStatus != "Sold"){
+                                if(Model.UserId != ticket.OwnerId)
+                                {
+                                    <button type="button" class="btn btn-success btn-sm"
+                                            onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")">
+                                        Buy Now
+                                    </button>
+                                }else{
+                                    <button type="button" class="btn btn-success btn-sm"
+                                            data-bs-toggle="modal" data-bs-target="#cannotBuyThat-@ticket.Id">
+                                        Buy Now
+                                    </button>
+                                }
                             }else{
                                 <button type="button" class="btn btn-success btn-sm"
-                                        data-bs-toggle="modal" data-bs-target="#cannotBuyThat-@ticket.Id">
+                                        data-bs-toggle="modal" data-bs-target="#ticketHasBeenSold-@ticket.Id">
                                     Buy Now
                                 </button>
                             }
@@ -160,12 +167,16 @@
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                    @if(Model.UserId != ticket.OwnerId){
-                                        <button type="button" class="btn btn-primary"
-                                        onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")"
-                                        >Proceed to Buy</button>
-                                    }else{
-                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cannotBuyThat-@ticket.Id">Proceed to Buy</button>
+                                    @if(ticket.TicketStatus != "Sold"){
+                                        if(Model.UserId != ticket.OwnerId){
+                                            <button type="button" class="btn btn-primary"
+                                            onclick="@(Model.UserId == null ? "window.location.href='/Authentication/Login'" : $"window.location.href='/Customer/Message?buyerId={Model.UserId}&sellerId={ticket.Owner?.Id}&ticketId={ticket.Id}'")"
+                                            >Proceed to Buy</button>
+                                        }else{
+                                            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#cannotBuyThat-@ticket.Id">Proceed to Buy</button>
+                                        }
+                                    } else{
+                                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#ticketHasBeenSold-@ticket.Id">Proceed to Buy</button>
                                     }
                                 </div>
                             </div>
@@ -190,6 +201,19 @@
                             <div class="modal-content">
                                 <div class="modal-body">
                                     <p>You cannot buy your own ticket :v !</p>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="modal fade" id="ticketHasBeenSold-@ticket.Id" tabindex="-1" aria-labelledby="ticketModalLabel-@ticket.Id" aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-body">
+                                    <p>Sorry! This ticket has been sold @@@@.</p>
                                 </div>
                                 <div class="modal-footer">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

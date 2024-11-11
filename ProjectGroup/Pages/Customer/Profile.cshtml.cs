@@ -182,7 +182,7 @@ namespace ProjectGroup.Pages.Customer
 
             await LoadDataAsync();
             TempData["SuccessMessage"] = "Profile updated successfully!";
-            return Page();
+            return RedirectToPage();
         }
 
 
