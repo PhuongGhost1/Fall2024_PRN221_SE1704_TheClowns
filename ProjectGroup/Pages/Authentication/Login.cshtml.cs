@@ -32,6 +32,12 @@ namespace ProjectGroup.Pages.Authentication
                 return RedirectToPage("/Authentication/Login");
             }
 
+            if(user.Status == "Blocked")
+            {
+                TempData["ErrorMessage"] = "Your account is blocked!";
+                return RedirectToPage("/Authentication/Login");
+            }
+
             var userRole = await _userService.GetUserRoleAsync(user.Id);
             if (userRole == null) return Redirect("/Error");
 

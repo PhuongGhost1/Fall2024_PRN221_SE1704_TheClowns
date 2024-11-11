@@ -472,6 +472,9 @@ public partial class TicketResellContext : DbContext
             entity.Property(e => e.Username)
                 .HasMaxLength(50)
                 .HasColumnName("username");
+            entity.Property(e => e.Status)
+                .HasMaxLength(50)
+                .HasColumnName("status");
             entity.Property(e => e.Wallet)
                 .HasColumnType("decimal(18, 2)")
                 .HasColumnName("wallet");
