@@ -49,7 +49,7 @@ namespace ProjectGroup.Pages.Authentication
             {
                 var r when r == Guid.Parse("51FABC7A-D801-429E-AA1E-6452EA780483") => "/Admin/Dashboard", //Admin
                 var r when r == Guid.Parse("57FA54D1-7C67-4405-B277-B8A58049FF3C") => "/TicketsPage", //Customer
-                var r when r == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A") => "/Admin", //Staff
+                var r when r == Guid.Parse("D569ADDF-590D-4D0F-B17A-F153CDB5BA6A") => "/Admin/Dashboard", //Staff
                 _ => "/TicketsPage"
             };
 

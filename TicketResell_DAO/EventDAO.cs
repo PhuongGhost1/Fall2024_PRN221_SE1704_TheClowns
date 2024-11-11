@@ -19,7 +19,15 @@ namespace TicketResell_DAO
 
         public static EventDAO GetInstance
         {
-           get => _instance = _instance ?? new EventDAO(new TicketResellContext());
+            get => _instance = _instance ?? new EventDAO(new TicketResellContext());
+        }
+
+
+        public async Task<bool> IsEventNameExistsAsync(string name)
+        {
+            // Check if an event with the given name already exists (case-insensitive)
+            return await _context.EventTypes
+                .AnyAsync(e => e.Name.ToLower() == name.ToLower());
         }
 
         public async Task<List<EventType>> GetAllEvents()
