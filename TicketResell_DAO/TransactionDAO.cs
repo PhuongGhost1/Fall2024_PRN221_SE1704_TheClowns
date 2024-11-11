@@ -20,8 +20,9 @@ namespace TicketResell_DAO
 
         public static TransactionDAO getInstance
         {
-            get{ 
-                if(_instance == null)
+            get
+            {
+                if (_instance == null)
                 {
                     _instance = new TransactionDAO();
                 }
@@ -58,7 +59,7 @@ namespace TicketResell_DAO
 
         public async Task<List<Transactions>> GetTransactionsByUserID(Guid? userID)
         {
-            return await _context.Transactions.Where(t => (t.SellerId == userID ? t.SellerId : t.BuyerId) == userID).ToListAsync();
+            return await _context.Transactions.Where(t => (t.SellerId == userID ? t.SellerId : t.BuyerId) == userID).OrderByDescending(t => t.TransactionDate).Include(m => m.Buyer).Include(m => m.Ticket).ToListAsync();
         }
 
         public async Task<bool> UpdateTransaction(Transactions transaction)
@@ -126,7 +127,7 @@ namespace TicketResell_DAO
 
         public async Task<bool> CheckIsTransactionCompleted(Guid? conversationId)
         {
-            return await _context.Transactions.AnyAsync(t => t.Ticket.Conversations.Any(c => c.Id == conversationId) && 
+            return await _context.Transactions.AnyAsync(t => t.Ticket.Conversations.Any(c => c.Id == conversationId) &&
                                         t.TransactionStatus == "Completed");
         }
 
