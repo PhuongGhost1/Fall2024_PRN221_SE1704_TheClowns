@@ -91,16 +91,16 @@
                                     bool isCurrentUserBuyer = Model.UserId == message.BuyerId;
                                     bool isCurrentUserSeller = Model.UserId == message.SellerId;
 
-                                    var alignment = isBuyerMessage ? "justify-content-end" : "justify-content-start";
-                                    var backgroundColor = isBuyerMessage ? "bg-primary text-white" : "bg-light text-dark";
-                                    var fontStyle = isCurrentUserBuyer ? "font-weight-bold text-primary" : "font-italic text-secondary";
+                                    var alignment = isBuyerMessage ? (isCurrentBuyer ? "justify-content-end" : "justify-content-start") : (isCurrentSeller ? "justify-content-end" : "justify-content-start");
+                                    var backgroundColor = isBuyerMessage ? (isCurrentBuyer ? "bg-primary text-white" : "bg-light text-dark") : (isCurrentSeller ? "bg-primary text-white" : "bg-light text-dark");
+                                    var fontStyle = isBuyerMessage ? (isCurrentBuyer ? "font-weight-bold text-primary" : "font-italic text-secondary") : (isCurrentSeller ? "font-weight-bold text-primary" : "font-italic text-secondary");
 
                                     var messageText = isCurrentBuyer ? @Html.Raw(message.Message) : @Html.Raw(message.Message.Replace("href=", "data-disabled-href="));
 
                                     <div class="d-flex @alignment mb-2">
                                         <div class="p-2 rounded @backgroundColor @fontStyle">
                                             @messageText
-                                            <small class="d-block @(isBuyerMessage ? "text-white" : "text-muted")">
+                                            <small class="d-block @(isBuyerMessage ? (isCurrentBuyer ? "text-white" : "text-muted") : (isCurrentSeller ? "text-white" : "text-muted"))">
                                                 @message.SentAt?.ToString("hh:mm tt")
                                             </small>
                                         </div>
