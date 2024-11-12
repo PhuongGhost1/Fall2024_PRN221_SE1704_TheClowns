@@ -8,14 +8,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface IFeedbackRepository
-    {
-        Task<Feedback> GetByIdAsync(Guid id);
-        Task<List<Feedback>> GetByUserIdAsync(Guid userId);
-        Task<bool> AddAsync(Feedback feedback);
-        Task<List<Feedback>> GetFeedbacksByTicketId(Guid ticketId);
-    }
-
     public class FeedbackRepository : IFeedbackRepository
     {
         public async Task<bool> AddAsync(Feedback feedback) => await FeedbackDAO.getInstance.AddFeedbackAsync(feedback);

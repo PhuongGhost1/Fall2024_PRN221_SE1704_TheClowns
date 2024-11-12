@@ -7,17 +7,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface IEventRepository
-    {
-        Task<List<EventType>> GetAllEvents();
-        Task<EventType?> GetEventById(Guid? id);
-        Task<bool> AddEventType(EventType eventType);
-        Task<bool> UpdateEventType(EventType eventType);
-        Task<bool> DeleteEventType(Guid? id);
-
-        Task<bool> IsEventNameExistsAsync(string name);
-    }
-
     public class EventRepository : IEventRepository
     {
         public async Task<bool> AddEventType(EventType eventType) => await EventDAO.GetInstance.AddEventType(eventType);

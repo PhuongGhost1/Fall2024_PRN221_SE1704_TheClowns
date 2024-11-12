@@ -7,14 +7,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface ISocialMediaRepository
-    {
-        Task<List<SocialMedium>> GetSocialMedias();
-        Task<SocialMedium?> GetSocialMediaById(Guid id);
-        Task<List<SocialMedium>> GetSocialMediaByUserId(Guid? userId);
-        Task<bool> CreateSocialMedia(SocialMedium socialMedia);
-        Task<bool> UpdateOrCreateSocialMediaLink(Guid userId, string type, string link);
-    }
     public class SocialMediaRepository : ISocialMediaRepository
     {
         public async Task<bool> CreateSocialMedia(SocialMedium socialMedia) => await SocialMediaDAO.GetInstance.CreateSocialMedia(socialMedia);

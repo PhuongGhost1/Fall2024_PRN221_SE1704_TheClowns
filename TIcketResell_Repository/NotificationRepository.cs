@@ -8,15 +8,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface INotificationRepository
-    {
-        Task<Notification> GetByIdAsync(Guid id);
-        Task<List<Notification>> GetByUserIdAsync(Guid? userId);
-        Task<Notification> AddAsync(Guid? userId, string message);
-        Task<bool> DeleteAsync(Guid id);
-        Task<int> CountNotificationByUserId(Guid? userId);
-    }
-
     public class NotificationRepository : INotificationRepository
     {
         public async Task<Notification> AddAsync(Guid? userId, string message) => await NotificationDAO.getInstance.AddNotification(userId, message);

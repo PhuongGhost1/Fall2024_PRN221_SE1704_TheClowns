@@ -7,14 +7,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface IOrderRepository
-    {
-        Task<Order> GetByIdAsync(Guid id);
-        Task<List<Order>> GetByUserIdAsync(Guid userId);
-        Task<bool> AddAsync(Order order);
-        Task<bool> UpdateAsync(Guid orderId, string status);
-        Task<bool> CancelAsync(Guid id);
-    }
     public class OrderRepository : IOrderRepository
     {
         public async Task<bool> AddAsync(Order order) => await OrderDAO.getInstance.CreateOrder(order);

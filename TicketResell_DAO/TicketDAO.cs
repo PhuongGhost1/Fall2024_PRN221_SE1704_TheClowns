@@ -57,7 +57,7 @@ namespace TicketResell_DAO
             }
             int count = await tickets.CountAsync();
             int TotalPages = (int)Math.Ceiling(count / (double)pageSize);
-            var paginatedTickets = await tickets.Skip((currentPage - 1) * pageSize).Take(pageSize).ToListAsync();
+            var paginatedTickets = await tickets.OrderByDescending(t => t.SubmittedAt).Skip((currentPage - 1) * pageSize).Take(pageSize).ToListAsync();
             return new TicketPagination
             {
                 Tickets = paginatedTickets,
@@ -144,6 +144,7 @@ namespace TicketResell_DAO
                 .Include(t => t.EventType)
                 .Include(t => t.Images)
                 .OrderBy(t => t.TicketStatus != "Pending")
+                .ThenByDescending(t => t.SubmittedAt)
                 .ThenBy(t => t.TicketStatus)
                 .ToListAsync();
         }

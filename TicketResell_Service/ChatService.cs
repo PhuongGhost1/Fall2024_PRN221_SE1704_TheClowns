@@ -7,17 +7,7 @@ using TicketResell_BusinessObject;
 using TIcketResell_Repository;
 
 namespace TicketResell_Service
-{
-    public interface IChatService
-    {
-        Task<bool> SendMessageAsync(Chat chat);
-        Task<List<Conversation>> LoadUserConversationsAsync(Guid? userId);
-        Task<Conversation> CreateConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId);
-        Task<List<Chat>> GetMessagesByConversationIdAsync(Guid conversationId);
-        Task<Conversation?> GetActiveConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId);
-        Task<bool> EndConversationAsync(Guid? conversationId);
-    }
-    
+{   
     public class ChatService : IChatService
     {
         private readonly IChatRepository _chatRepository;

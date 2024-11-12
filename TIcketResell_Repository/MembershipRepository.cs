@@ -7,16 +7,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface IMembershipRepository
-    {
-        Task<bool> CreateMembership(Membership membership);
-        Task<Membership> GetMembershipByID(Guid membershipID);
-        Task<bool> UpdateMembership(Membership membership);
-        Task<bool> DeleteMembership(Guid membershipID);
-        Task<List<Membership>> GetAllMemberships();
-        Task<Membership> GetMembershipByUserID(Guid userID);
-    }
-
     public class MembershipRepository : IMembershipRepository
     {
         public async Task<bool> CreateMembership(Membership membership) => await MembershipDAO.GetInstance.CreateMembership(membership);

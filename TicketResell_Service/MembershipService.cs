@@ -7,15 +7,6 @@ using TIcketResell_Repository;
 
 namespace TicketResell_Service
 {
-    public interface IMembershipService
-    {
-        Task<bool> CreateMembership(Membership membership);
-        Task<Membership> GetMembershipByID(Guid membershipID);
-        Task<bool> UpdateMembership(Membership membership);
-        Task<bool> DeleteMembership(Guid membershipID);
-        Task<List<Membership>> GetAllMemberships();
-        Task<Membership> GetMembershipByUserID(Guid userID);
-    }
     public class MembershipService : IMembershipService
     {
         private readonly IMembershipRepository _membershipRepository;

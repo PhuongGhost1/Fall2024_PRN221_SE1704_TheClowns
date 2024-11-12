@@ -8,15 +8,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface IChatRepository
-    {
-        Task<bool> AddMessageAsync(Chat message);
-        Task<List<Conversation>> LoadUserConversationsAsync(Guid? userId);
-        Task<Conversation> CreateConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId);
-        Task<List<Chat>> GetMessagesByConversationIdAsync(Guid conversationId);
-        Task<Conversation?> GetActiveConversationAsync(Guid buyerId, Guid sellerId, Guid ticketId);
-        Task<bool> EndConversation(Guid? conversationId);
-    }
     public class ChatRepository : IChatRepository
     {
         public async Task<bool> AddMessageAsync(Chat message) => await ChatDAO.GetInstance.AddMessageAsync(message);

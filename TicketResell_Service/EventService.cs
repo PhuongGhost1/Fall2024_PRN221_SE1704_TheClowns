@@ -7,17 +7,6 @@ using TIcketResell_Repository;
 
 namespace TicketResell_Service
 {
-    public interface IEventService
-    {
-        Task<List<EventType>> GetAllEventsAsync();
-        Task<EventType?> GetEventByIdAsync(Guid? id);
-        Task<bool> AddEventTypeAsync(EventType eventType);
-        Task<bool> UpdateEventTypeAsync(EventType eventType);
-        Task<bool> DeleteEventTypeAsync(Guid id);
-
-        Task<bool> IsEventNameExistsAsync(string name);
-
-    }
     public class EventService : IEventService
     {
         private readonly IEventRepository _eventRepository;

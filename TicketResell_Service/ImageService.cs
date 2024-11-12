@@ -7,13 +7,6 @@ using TIcketResell_Repository;
 
 namespace TicketResell_Service
 {
-    public interface IImageService
-    {
-        Task<Image?> GetImageById(int id);
-        Task<bool> AddImage(Image image);
-        Task<bool> UpdateImage(Image image);   
-        Task<Image?> GetImageByTicketId(Guid ticketId);   
-    }
     public class ImageService : IImageService
     {
         private readonly IImageRepository _imageRepository;

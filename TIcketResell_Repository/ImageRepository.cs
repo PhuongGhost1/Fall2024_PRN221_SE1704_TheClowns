@@ -7,13 +7,6 @@ using TicketResell_DAO;
 
 namespace TIcketResell_Repository
 {
-    public interface IImageRepository
-    {
-        Task<Image> GetImageById(int id);
-        Task<bool> AddImage(Image image);
-        Task<bool> UpdateImage(Image image);   
-        Task<Image?> GetImageByTicketId(Guid ticketId);
-    }
     public class ImageRepository : IImageRepository
     {
         public async Task<bool> AddImage(Image image) => await ImageDAO.GetInstance.AddImage(image);

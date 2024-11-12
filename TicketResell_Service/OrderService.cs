@@ -7,14 +7,6 @@ using TIcketResell_Repository;
 
 namespace TicketResell_Service
 {
-    public interface IOrderService
-    {
-        Task<Order> GetOrderByIdAsync(Guid id);
-        Task<List<Order>> GetOrdersByUserIdAsync(Guid userId);
-        Task<bool> PlaceOrderAsync(Order order);
-        Task<bool> UpdateOrderStatusAsync(Guid orderId, string status);
-        Task<bool> CancelOrderAsync(Guid orderId);
-    }
     public class OrderService : IOrderService
     {
         private IOrderRepository _orderRepository;

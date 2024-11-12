@@ -7,14 +7,7 @@ using TicketResell_BusinessObject;
 using TIcketResell_Repository;
 
 namespace TicketResell_Service
-{
-    public interface IFeedbackService
-    {
-        Task<List<Feedback>> GetFeedbackByUserIdAsync(Guid userId);
-        Task<bool> AddFeedbackAsync(Feedback feedback);
-        Task<List<Feedback>> GetFeedbacksByTicketIdAsync(Guid ticketId);
-    }
-    
+{   
     public class FeedbackService : IFeedbackService
     {
         private readonly IFeedbackRepository _feedbackRepository;
